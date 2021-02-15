@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import About from './About'
-//import Twitter from './Twitter'
+import Twitter from './Twitter'
 // import Recent from './Recent'
 import BannerCategories from './BannerCategories'
 const Banner = () => {
   return <Wrapper>
     <About/>
-    {/* <Twitter/> */}
+    <Twitter/>
     <BannerCategories/>
     {/* <RelevantLinks/> */}
   </Wrapper>
