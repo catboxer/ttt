@@ -57,7 +57,6 @@ const SEO = ({ title, description, image, article }) => {
     </Helmet>
   )
 }
-
 export default SEO
 
 SEO.propTypes = {

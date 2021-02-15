@@ -1,9 +1,9 @@
 import React from 'react'
 import Hero from '../components/Hero'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import Posts from '../components/Posts'
 import { graphql } from 'gatsby'
-import SEO from '../components/SEO'
+import SEO from '../components/seo'
 
 const IndexPage = ({data}) => {
   const {
