@@ -1,0 +1,13 @@
+---
+title: useEffect & Closures
+slug: useeffect-hurt-my-brain
+image: ./images/josiah-zacharias-Svr-e3_uZBs-unsplash.jpg
+date: 2021-01-17
+author: rosalee rester
+category: react
+---
+
+import { Link } from 'gatsby'
+
+This morning I spent nearly an hour trying to understand how dependencies worked with the useEffect hook. I understood that if you didn't put any dependencies in there it would run on each re-render. I understood that putting an empty array there would signal a one time load. I understood about clean up on event listeners and functions that could be created anew each time there was a re-render. What I didn't understand was how a setInterval function that used setState on a variable would not get the updated version every time setInterval hit an interval.
+And, it's because I managed to not fully understand closures and how a function within useEffect is basically set at the time the useEffect is run. So, if you have the dependency set as an empty array then the setInterval is run, it will always setState to whatever the variable was when useEffect initially ran. Because of closure it wasn't updating the variable set by State. It was only if you used a callback function with setState would it be able to see the updated variable.

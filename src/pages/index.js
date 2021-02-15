@@ -1,22 +1,47 @@
-import React from "react"
-import { Link } from "gatsby"
+import React from 'react'
+import Hero from '../components/Hero'
+import Layout from '../components/Layout'
+import Posts from '../components/Posts'
+import { graphql } from 'gatsby'
+import SEO from '../components/SEO'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+const IndexPage = ({data}) => {
+  const {
+    allMdx:{nodes:posts}
+  } = data
+  return <Layout>
+  <SEO title="Home"/>
+  <Hero showChair/>
+  <Posts posts={posts} title="Recently Published"/>
   </Layout>
-)
+}
+
+export const query = graphql`
+  {
+    allMdx(sort: {fields: frontmatter___date, order: DESC}, limit: 5) {
+      nodes {
+        excerpt
+        frontmatter {
+          author
+          category
+          date(formatString: "MMMM Do, YYYY", difference: "")
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+          slug
+          title
+        }
+        id
+        wordCount {
+          words
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage

@@ -1,0 +1,199 @@
+---
+title: Accessibility On Your Website
+slug: accessibility-online
+image: ./images/pexels-alexandre-saraiva-carniato-3044630.jpg
+date: 2020-10-03
+author: Rosalee Rester
+category: Accessibility
+---
+
+import { Link } from 'gatsby'
+
+# Accessibility
+
+Last month the trackpad on my laptop stopped working and I found out exactly how hard it is to navigate most websites. More often than not I got stuck in some menu or unable to access one or I'd tab through and not know where on the page I was because I was stuck behind some modal that was blocking the page.
+
+I also thought about what the Internet meant to people with disabilities who were asked to navigate a physical world that was less than friendly to them. It seems to me that at the very least our digital spaces should be made specifically for those who do not have the ease of movement through our physical world.
+
+## Classes
+
+It feels overwhelming knowing how much is involved in making a site accessible for folks with various visual, hearing, motor and cognitive disabilities. You want your website to be readible by screen readers, speech recognition software, braille terminals and alternative keyboards. Thank goodness there are so many fabulous resources out there to guide us.
+
+[Google's Free Web Accessibility class](https://www.udacity.com/course/web-accessibility--ud891) was helpful with better understanding how screen readers are used. There were real world examples and opportunities to redo code to make pages more accessible. After this class I felt I had a much better grasp on how things worked. For instance, if you are not wrapping your form element in the label tag then create a matching id to tie the two together.
+
+```html
+<input type="checkbox" checked name="more" id="googoo" />
+<label for="googoo">
+  Want More?
+</label>
+```
+
+Their section on ARIA was fairly in-depth and had me coming away with knowing I wouldn't use ARIA unless there was no other tool to use because if you don't know what you're doing (ME) then you can easily muck up the user experience. The [ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/) did help with being able to understand what kind of work needed to go into using labels on various elements. I like their 1st Principle which is "A role is a promise" which makes you think each time you add a role. Another solid resource for ARIA is the Digital Accessibility Implementation Resources website. I dig their list of [ARIA roles along with code samples](http://accessibilityresources.org/m-aria/aria-role) along with coding examples. I highly recommend this class as an entry point.
+
+I also watched Marcy Sutton's [Accessibility in JS Apps class](https://frontendmasters.com/courses/javascript-accessibility/) on Frontendmasters. This class covered a react component for drop down menus, CSS that helped hide visibility but was still available to screen readers, managing focus, adding navigational dynamic skip links, testing with Jest (over my head) and so much more. It was helpful because she did it all inside of Gatsby.
+
+There is a lot of good information out on the web. It's just that it's all so new. Like a way to set focus styles depending on whether you are tabbing or mousing. Right now it's a plug in called [focus-visible](https://github.com/WICG/focus-visible). Hopefully soon it will be a [ standardized CSS class ](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).
+
+## Testing Tools
+
+I use the [a11y plug in](https://www.npmjs.com/package/eslint-plugin-jsx-a11y) to help point out the most obvious errors. [Gatsby comes bundled with the a11y plug in](https://www.gatsbyjs.com/docs/conceptual/making-your-site-accessible/). So nice!
+
+Naturally, I didn't have ESLint set up properly so I couldn't find my .eslintrc file. Here is a great tutorial on [setting up ESLint in VSCode](https://www.digitalocean.com/community/tutorials/linting-and-formatting-with-eslint-in-vs-code).
+
+Firefox Developer Tools comes with an [Accessibility Inspector](https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector) and [Chrome offers Lighthouse](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference) which includes an Accessibility option.
+
+### Browser Extensions
+
+- [Accessibility Insights](https://chrome.google.com/webstore/detail/accessibility-insights-fo/pbjjkligggfmakdaogkfomddhfmpjeni?hl=en). Use Command+Shift+K for a shortcut.
+
+- [aXe Web Accessibility Testing](https://chrome.google.com/webstore/detail/axe-web-accessibility-tes/lhdoppojpmngadmnindnejefpokejbdd)
+
+- [WAVE web accessibility evaluation tool](https://wave.webaim.org/extension/)
+
+- [Google Lighthouse ](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk)
+
+### Scans
+
+I haven't tried out any of these scans but thought I'd list them here anyway.
+
+- [CynthiaSays](http://www.cynthiasays.com/)
+
+- [pa11y tools](https://pa11y.org/)
+
+- [CKEditor Accessibility Checker](https://ckeditor.com/ckeditor-4/accessibility-checker/)
+
+- [a11y Free Accessibilty Analysis](https://www.boia.org/w3c-tools-services-a11y)
+
+- [sortSite checker](https://www.powermapper.com/products/sortsite/)
+
+If you want more and you're into long lists, w3 links to 160 [Web Accessbility Evaluation Tools](https://www.w3.org/WAI/ER/tools/).
+
+## Using Screen Readers & Keyboards
+
+WebAIM has a getting started guide for both [Mac Voiceover](https://webaim.org/articles/voiceover/), [Windows NVDA](https://webaim.org/articles/nvda/) and to [testing with a keyboard](https://webaim.org/techniques/keyboard/). Apple offers an easy to follow [vo](https://www.apple.com/voiceover/info/guide/_1124.html).
+
+Or just drink your coffee out of this seriously awesome [mug](https://scottvinkle.me/products/voiceover-screen-reader-cheat-sheet-mug).
+
+It takes a bit of time to get used to navigating a website with a Screen Reader or just your keyboard. The Google Accessibility class showed a blind instructor using a Screen Reader and the importance of your headings cannot be overstated.
+
+## Best Practices
+
+If you want dive quickly in I love these [10 tips that get you started right away on making your website more accessible](https://www.webfx.com/blog/web-design/10-simple-web-accessibility-tips-you-can-do-today/).
+
+For a CMS Wordpress has a dedicated Accessibility Team. They have a great handbook that has a [quick start accessibility guide](https://make.wordpress.org/accessibility/handbook/best-practices/quick-start-guide/) that is a great starting point.
+
+The [checklist from the a11y project](https://www.a11yproject.com/checklist/) is also a good starting point. I like their interface because you can hop around so easily between various elements.
+
+WebAIM has a long list of resources including an [accessibility checklist and some great tools.](https://webaim.org/resources/)
+
+This [demo of a bad website vs. good website](https://www.w3.org/WAI/demos/bad/Overview.html) was a great example of what to do and not to do.
+
+<!-- Skip Links
+
+
+
+css prefers-reduced-motion CSS
+@media (prefers-reduced-motion: reduce){
+.animation{
+animation: none;
+transition:.001ms;
+}}
+So, to ensure the AT can access the <title> and <desc>:
+Add the appropriate ID’s to the <title> and <desc>:
+
+<title id="uniqueTitleID">The title of the SVG</title>
+<desc id="uniqueDescID">A longer, more complete description for complex graphics.</desc>
+On the <svg> tag, add:
+aria-labelledby="uniqueTitleID uniqueDescID" (use the title and desc ID’s) – both title and description are included in aria-labelledby because it has better screen-reader support than aria-describedby (see tip #4)
+One more thing:
+On the <svg> tag, add:
+role="img" (so that the SVG is not traversed by browsers that map the SVG to the group role)
+
+SVG:
+Viewport: X, Y, Width, Height
+
+<svg xmlns=http://www.w3.org/2000/svg role="img" aria-labelledby="title  desc">
+   <title id="title">Circle</title>
+   <desc id="desc">Large red circle with a black border</desc>
+   <circle role="presentation" cy="60" r="55" stroke="black" stroke-width="2"
+   fill="red" />
+</svg> -->
+
+## Code Snippets
+
+These are not mine but were suggested in the two classes I mentioned above. I found them quite useful so I am adding them here. From Marcy Sutton:
+
+This class hides the element from the page but it is still accessible to Screen Readers.
+
+```css
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+```
+
+To find out where your focus is on a page.
+
+```javascript
+document.body.addEventListener('focusin', event => {
+  console.log(document.activeElement)
+})
+```
+
+These snippets I got from the Google class.
+
+Find headings in a page:
+
+```javascript
+for (var i = 0, headings = $$('h1,h2,h3,h4,h5,h6'); i < headings.length; i++) {
+  console.log(
+    headings[i].textContent.trim() + ' ' + headings[i].tagName,
+    headings[i]
+  )
+}
+```
+
+Add in headings that are not visible to regular users to help with navigation. This one should not be overused as it can end up causing more confusion.
+
+```css
+#name h2 {
+  position: absolute;
+  top: -9999px;
+}
+```
+
+For users who need to enlarge text it helps to have the whole page change into a mobile layout making it much easier to see. To achieve this they suggest adding this into your html.
+
+```html
+Use a meta viewport tag
+<meta name="vieport" content="width=device-width, initial-scale=1>"
+```
+
+// images that are links or descriptions that you need to hide in a link.
+// https://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/C7
+
+To get started I am going to follow the steps below. This is a work in progress.
+
+1. Use my brower extension to point out obvious issues. I find Accessibility Insights easy to use. I also like axe.
+2. Tab through my entire site to make sure all links and content are accessible by [keyboard](https://webaim.org/techniques/keyboard/).
+3. [Check my html structure to make sure it was labeled correctly](https://www.w3schools.com/html/html5_semantic_elements.asp). [Here is there page to ARIA Landmarks with interactive examples](https://www.w3.org/TR/wai-aria-practices/examples/landmarks/index.html).
+4. Check that all my form fields were labeled and instructions were included.
+5. Check for proper color contrasting using the [NoCoffee browser extension](https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl?hl=en-US). A great tool to check your color contrasting schemes is [the Contrast Checker](https://contrastchecker.com/).
+6. Enlarge everything to 200% to make sure it is still readable.
+7. Check my urls to make sure they are descriptive
+8. Make sure all my inline video has CC enabled.
+9. Check my alt tags and add captions when necessary.
+10. Make sure to [tag my dynamic content ](https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/aria-landmarks/) so it will get reread on paint.
+11. Inject any [skip links](https://webaim.org/techniques/skipnav/#focus) where tabbing becomes annoying.
+
+I immediately found 22 errors on my index page and major issues with my small screen toggled menu and contact form. The dropdown menu was not available to the keyboard.
+
+<Link to="/posts" className="btn center-btn">
+  all posts
+</Link>

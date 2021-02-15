@@ -1,0 +1,92 @@
+---
+title: SVG Animation
+slug: svg-animation-greenSock
+image: ./images/pexels-picjumbocom-196645.jpg
+date: 2020-05-03
+author: Rosalee Rester
+category: SVG
+---
+
+import { Link } from 'gatsby'
+
+## SVG Animation
+
+During job interviews when people ask me what my biggest weakness is I tell them about my shiny objects disorder(SOD). I could be deep into something and suddenly find myself veering way off course.
+
+There I was studiously plugging along with React/Gatsby when I came across Frontmasters [SVG Essentials class](https://frontendmasters.com/courses/svg-essentials-animation/). Sarah Drasner, the instructor, gives a solid overview about what is so freakin' amazing about SVG animations. She has a fabulous [codepen](https://codepen.io/sdras) collection of SVG animations you should check out for inspiration. Here is one where she explains [how the GSAP timeline works](https://codepen.io/sdras/pen/ByEWON).
+
+I had fooled around with CSS animation but the power of SVG animation had me spending more than a couple of days playing with greenSock on Codepen where they offer every module they have for [free](https://codepen.io/greenSock/pen/OPqpRJ). The SVGmorph and Text modules are crazy fun.
+
+## Starting Out
+
+These are the [youTube videos](https://www.youtube.com/watch?v=u4hHfLrb7iQ&list=PLSkIx8U0TMvi4lb_gC9yYaFEoSxPyi5V6) that helped me the most to get my toes wet. He dives deeper in with [paid content ](https://www.creativecodingclub.com/bundles/creative-coding-club) that is worth the cost of a coffee. Carl is really easy to understand and explains GSAP 3 with great visuals.
+
+## Setting Up SVG files
+
+Setting up your SVG is key to a successful animation. If you can group together the paths you want to animate it's so much easier. Make sure to set your coordinates at 0,0 in your Illustrator file. I didn't do this before exporting and could not figure out for the longest time why my elements were jumping all over the place until I found this great [article](https://resourceatlanta.com/knowledgebase/preparing-adobe-illustrator-files-for-svg-interactivity/).
+
+### Paths
+
+Paths start with a command of "Move To" or "M" with an x and y coordinate. There is a line command ("L"&"H"&"V"), a curve command as well ("C"&"Q") and an arc command ("A"). Paths are closed with a z. Here is a fun codepen to see how the [coordinates work](https://codepen.io/anthonydugois/pen/mewdyZ).
+
+### Export
+
+I tend to export the css from Illustrator as internal css so I can mess with it in one place but that's just my preference.
+
+Here is the tool I use to [streamline my SVG file](https://jakearchibald.github.io/svgomg/) before adding it into my project.
+
+## Helpful Tips
+
+You will find the [greenSock cheatsheet](https://greensock.com/cheatsheet/) quite helpful.
+
+Objects in groups have their transform origin at the top left. To move the origin to the center use transformOrigin:" 50% 50%"
+
+The greenSock [Ease Visualizer](https://greensock.com/ease-visualizer/) is quite handy in determining the type of ease you want to use.
+
+I love using the [GSAP.utils.wrap()](https://www.snorkl.tv/use-GSAP-utils-wrap-to-cycle-through-array-values/) to cycle through various values.
+
+## React & greenSock
+
+greenSock is fairly easy to set up in Vanilla JS but when it comes to adding it into your React project...well I am still trying to figure that one out.
+
+Currently the only doc on the greenSock site is using outdated [React class based components and GSAP 2](https://greenSock.com/react).
+
+When using Hooks I found a couple of examples that I've parsed together but am still trying to understand how it works.
+
+From what I read [here](https://blog.logrocket.com/animations-react-hooks-greensock/) if you are manipulating elements in your DOM then you want to useRefs to mark the top level ones and create variables for the children. If you are just working through the SVG then using ID's are fine.
+
+You want to useEffect to stop items from loading before your JS is ready. So no more worrying about pre images showing up before your animation launches.
+I started here with a super easy to understand explanation of the [basic set up](https://maggieappleton.com/greensock-react/).
+
+For a quick overview on [how greenSock works and how to set it up in React](https://www.smashingmagazine.com/2020/09/animating-react-components-greensock/) I found this article immensely helpful.
+
+Here is a [great article](https://roblahoda.com/blog/2020-01-27-getting-greensock-animation-GSAP-running-with-react-hooks/) explaining how to set your project up. I've seen different ways of setting up the timeline.
+One article suggest [memoizing the timeline.](https://medium.com/javascript-in-plain-english/react-functions-GSAP-timelines-and-hooks-oh-my-ec7620b6bdc6).
+This article looks to be a good solution to my current struggle to deal with the triggering of methods on GSAP like the [play/restart/reverse buttons](https://dev.to/billyjacoby/greensock-animations-using-react-hooks-5d1p).
+This video does a great job of explaining how to [grab elements from your DOM using Refs](https://www.youtube.com/watch?v=d2kXe3QrHl8&list=PLgcPxVODYXGIT9iX0uHBUYQSyqGvafwHT&index=7).
+
+## React Gatsby
+
+https://greensock.com/forums/topic/19745-gsap-reactgatsby/
+
+```jsx
+import React from 'react'
+
+const Counter = () => {
+  const [count, setCount] = React.useState(0)
+  return (
+    <section className="counter">
+      <h4>show some love to MDX</h4>
+      <h4>likes {count}</h4>
+      <button className="btn btn-danger" onClick={() => setCount(count + 1)}>
+        i like mdx
+      </button>
+    </section>
+  )
+}
+export default Counter
+```
+
+<Link to="/posts" className="btn center-btn">
+  all posts
+</Link>

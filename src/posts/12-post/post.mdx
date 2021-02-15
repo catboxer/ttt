@@ -1,0 +1,22 @@
+---
+title: Making This Blog
+slug: making-this-blog
+image: ./images/twitter-coders.png
+date: 2021-01-18
+author: rosalee rester
+category: graphQL
+---
+
+import { Link } from 'gatsby'
+
+I've been spending a bit of time trying to pick up graphQL. There aren't that many up-to-date online classes out there on it as far as I could see. I ended up taking a [Gatsby class on Udemy by John Smigla](https://www.udemy.com/share/101ZimAkEbcFZTTQ==/) whom I like quite a bit because he's so project oriented.
+
+I knew I needed some sort of personal website and his Gatsby class came with the opportunity to learn markup and graphQL via a Blog Project.
+
+I took his general layout/components and pulled in a Twitter list, added an SVG animation, redid the layout to make it more accessible and added in a sidebar with links and twitter posts that matched with the category page.
+
+This project did give me some more time with graphql queries but not so much with mutations. I didn't touch the backside schemas or apollo.
+
+I also learned nested destructuring as the twitter API contained several layers of objects holding an array nesting another object. It took me a bit of time and reading this [fantastic article on destructuring. ](https://codeburst.io/es6-destructuring-the-complete-guide-7f842d08b98f) to be able to access "url".
+
+`"data": { "coderlist": { "nodes": [ { "full_text": "text", "id": "id", "user": { "name": "MF DOOM", "profile_image_url": "http://pbs.twimg.com/profile_images.jpg", "screen_name": "MF_DOOM" }, "entities": { "urls": [ { "url": "https://Fazers" } ] } }`
