@@ -13,7 +13,7 @@ const readTime= Math.ceil(words/200)
   <Image fluid={image.childImageSharp.fluid} className="img"/>
   <div className="info">
     <span className="category">{category}</span>
-    <h3>{title}</h3>
+    <h2>{title}</h2>
     <div className="underline"></div>
     <p>{excerpt}</p>
     <Link to={`/posts/${slug}`} className="link">

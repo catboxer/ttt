@@ -8,9 +8,9 @@ author: Rosalee Rester
 category: SVG
 ---
 
-import { Link } from 'gatsby'
+import { Link } from "gatsby"
 
-## SVG Animation
+### Sidetracked
 
 During job interviews when people ask me what my biggest weakness is I tell them I have SOD (Shiny Objects Disorder). I could be deep into something and suddenly find myself veering way off course.
 
@@ -18,25 +18,25 @@ There I was studiously plugging along with React/Gatsby when I came across Front
 
 I had fooled around with CSS animation but the power of SVG animation had me spending more than a couple of days playing with greenSock on Codepen where they offer every module they have for [free](https://codepen.io/greenSock/pen/OPqpRJ). The SVGmorph and Text modules are crazy fun.
 
-## Starting Out
+### Starting Out
 
 These are the [youTube videos](https://www.youtube.com/watch?v=u4hHfLrb7iQ&list=PLSkIx8U0TMvi4lb_gC9yYaFEoSxPyi5V6) that helped me the most to get my toes wet. He dives deeper in with [paid content ](https://www.creativecodingclub.com/bundles/creative-coding-club) that is worth the cost of a coffee. Carl is really easy to understand and explains GSAP 3 with great visuals.
 
-## Setting Up SVG files
+### Setting Up SVG files
 
 Setting up your SVG is key to a successful animation. If you can group together the paths you want to animate it's so much easier. Make sure to set your coordinates at 0,0 in your Illustrator file. I didn't do this before exporting and could not figure out for the longest time why my elements were jumping all over the place until I found this great [article](https://resourceatlanta.com/knowledgebase/preparing-adobe-illustrator-files-for-svg-interactivity/).
 
-### Paths
+#### Paths
 
 Paths start with a command of "Move To" or "M" with an x and y coordinate. There is a line command ("L"&"H"&"V"), a curve command as well ("C"&"Q") and an arc command ("A"). Paths are closed with a z. Here is a fun codepen to see how the [coordinates work](https://codepen.io/anthonydugois/pen/mewdyZ).
 
-### Export
+#### Export
 
 I tend to export the css from Illustrator as internal css so I can mess with it in one place but that's just my preference.
 
 Here is the tool I use to [streamline my SVG file](https://jakearchibald.github.io/svgomg/) before adding it into my project.
 
-## Helpful Tips
+### Helpful Tips
 
 You will find the [greenSock cheatsheet](https://greensock.com/cheatsheet/) quite helpful.
 
@@ -46,7 +46,7 @@ The greenSock [Ease Visualizer](https://greensock.com/ease-visualizer/) is quite
 
 I love using the [GSAP.utils.wrap()](https://www.snorkl.tv/use-GSAP-utils-wrap-to-cycle-through-array-values/) to cycle through various values.
 
-## React & greenSock
+### React & greenSock
 
 greenSock is fairly easy to set up in Vanilla JS but when it comes to adding it into your React project...well I am still trying to figure that one out.
 
@@ -66,7 +66,7 @@ One article suggest [memoizing the timeline.](https://medium.com/javascript-in-p
 This article looks to be a good solution to my current struggle to deal with the triggering of methods on GSAP like the [play/restart/reverse buttons](https://dev.to/billyjacoby/greensock-animations-using-react-hooks-5d1p).
 This video does a great job of explaining how to [grab elements from your DOM using Refs](https://www.youtube.com/watch?v=d2kXe3QrHl8&list=PLgcPxVODYXGIT9iX0uHBUYQSyqGvafwHT&index=7).
 
-## React Gatsby
+### React Gatsby
 
 https://greensock.com/forums/topic/19745-gsap-reactgatsby/
 
