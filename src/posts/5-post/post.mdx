@@ -8,7 +8,7 @@ author: Rosalee Rester
 category: Gatsby
 ---
 
-import { Link } from 'gatsby'
+import { Link } from "gatsby"
 
 # FOUC
 
@@ -25,7 +25,7 @@ Here's the updated code for gatsby-ssr.js:
 ```jsx
 export const onRenderBody = ({ setBodyAttributes }) => {
   setBodyAttributes({
-    className: 'no-js',
+    className: "no-js",
   })
 }
 ```
@@ -34,8 +34,8 @@ and for gatsby-brower.js
 
 ```jsx
 export const onClientEntry = () => {
-  window.addEventListener('load', () => {
-    document.body.className = document.body.className.replace(/\bno-js\b/, '')
+  window.addEventListener("load", () => {
+    document.body.className = document.body.className.replace(/\bno-js\b/, "")
   })
 }
 ```
@@ -55,6 +55,10 @@ I then tried installing [typography.js](https://kyleamathews.github.io/typograph
 I [downloaded this my Google fonts & font faces using this great tool](https://google-webfonts-helper.herokuapp.com/fonts/open-sans?subsets=latin) and added them into my static folder.
 
 It is much better but I'm still not completely satisfied.
+
+I went down a rabbit hole for a couple of days trying to raise my [page speed](https://developers.google.com/speed/pagespeed/insights/). I spent hours trying to optimize into the green. My site passed everything except for the Javascript and I ultimately gave up, recognizing that I was going to have to [learn a lot more about Babel and webpacks](https://github.com/GoogleChromeLabs/webpack-libs-optimizations) before I was going to be able to 'deliver smaller JS payloads', remove unused JS and avoid serving legacy JS to modern browers with a module check.
+
+I ultimately ended up going with custom fonts and using the [Omni Font Loader plug in](https://www.gatsbyjs.com/plugins/gatsby-omni-font-loader/) as it gave the most options without going over my head.
 
 <Link to="/posts" className="btn center-btn">
   all posts
