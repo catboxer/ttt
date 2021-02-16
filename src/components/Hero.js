@@ -2,7 +2,7 @@ import React from 'react'
 import ArmchairImg from "../assets/armchair.svg"
 import styled from 'styled-components'
 import CloudImg from "../assets/vector.svg"
-//import {setColor} from '../styles'
+import {setColor} from '../styles'
 const Hero = ({showChair}) => {
   return <Wrapper>
   { 
@@ -13,8 +13,9 @@ const Hero = ({showChair}) => {
 
 
 const Wrapper = styled.header`
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, hsl(180, 57%, 50%)  60%);
-  height: 15rem;
+  background: ${setColor.primary7};
+  /* linear-gradient(0deg, rgba(255,255,255,1) 0%, hsl(180, 57%, 50%)  60%); */
+  height: 6rem;
   position: relative;
   z-index: -1;
     &:after{
@@ -28,7 +29,7 @@ const Wrapper = styled.header`
     background-size: cover;
     }
 @media screen and (min-width: 800px){
-  height: 20rem;
+  height: 12rem;
 }
 `
 const Image = styled.img`

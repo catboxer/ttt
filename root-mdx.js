@@ -135,9 +135,9 @@ p {
   background: ${setColor.grey10};
 }
 /* social links */
-main {
+${'' /* main {
   margin-top: -10rem;
-}
+} */}
 
 /*
 ===============
