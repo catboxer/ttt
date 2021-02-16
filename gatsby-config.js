@@ -53,6 +53,21 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        mode: `async`,
+        enableListener: true,
+        custom: [
+      {
+        /* Exact name of the font as defied in @font-face CSS rule */
+        name: ['Open Sans', 'Open Sans Condensed', 'Roboto Slab'],
+        /* Path to the font CSS file inside the "static" folder with @font-face definition */
+        file: "/fonts/fonts.min.css",
+      },
+    ],
+        },
+      },
+    {
       resolve: `gatsby-source-twitter`,
       options: {
         credentials: {

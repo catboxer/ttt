@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../fonts/open-sans-v18-latin-regular.eot);
+  src: local(""),
+    url(../fonts/open-sans-v18-latin-regular.eot?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/open-sans-v18-latin-regular.woff2) format("woff2"),
+    url(../fonts/open-sans-v18-latin-regular.woff) format("woff"),
+    url(../fonts/open-sans-v18-latin-regular.ttf) format("truetype"),
+    url(../fonts/open-sans-v18-latin-regular.svg#OpenSans) format("svg");
+}
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/open-sans-v18-latin-700.eot);
+  src: local(""),
+    url(../fonts/open-sans-v18-latin-700.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/open-sans-v18-latin-700.woff2) format("woff2"),
+    url(../fonts/open-sans-v18-latin-700.woff) format("woff"),
+    url(../fonts/open-sans-v18-latin-700.ttf) format("truetype"),
+    url(../fonts/open-sans-v18-latin-700.svg#OpenSans) format("svg");
+}
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(../fonts/open-sans-condensed-v15-latin-300.eot);
+  src: local(""),
+    url(../fonts/open-sans-condensed-v15-latin-300.eot?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/open-sans-condensed-v15-latin-300.woff2) format("woff2"),
+    url(../fonts/open-sans-condensed-v15-latin-300.woff) format("woff"),
+    url(../fonts/open-sans-condensed-v15-latin-300.ttf) format("truetype"),
+    url(../fonts/open-sans-condensed-v15-latin-300.svg#OpenSansCondensed)
+      format("svg");
+}
+@font-face {
+  font-family: "Open Sans Condensed";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/open-sans-condensed-v15-latin-700.eot);
+  src: local(""),
+    url(../fonts/open-sans-condensed-v15-latin-700.eot?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/open-sans-condensed-v15-latin-700.woff2) format("woff2"),
+    url(../fonts/open-sans-condensed-v15-latin-700.woff) format("woff"),
+    url(../fonts/open-sans-condensed-v15-latin-700.ttf) format("truetype"),
+    url(../fonts/open-sans-condensed-v15-latin-700.svg#OpenSansCondensed)
+      format("svg");
+}
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/roboto-slab-v13-latin-700.eot);
+  src: local(""),
+    url(../fonts/roboto-slab-v13-latin-700.eot?#iefix)
+      format("embedded-opentype"),
+    url(../fonts/roboto-slab-v13-latin-700.woff2) format("woff2"),
+    url(../fonts/roboto-slab-v13-latin-700.woff) format("woff"),
+    url(../fonts/roboto-slab-v13-latin-700.ttf) format("truetype"),
+    url(../fonts/roboto-slab-v13-latin-700.svg#RobotoSlab) format("svg");
+}
