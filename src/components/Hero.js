@@ -37,8 +37,8 @@ display: none;
 @media screen and (min-width: 800px){
   display: inline-block;
     padding-bottom: 1em;
-    width: 14rem;
-    height: 14rem;
+    width: 12rem;
+    height: 12rem;
     display: block;
     position: absolute;
     bottom: 0;
