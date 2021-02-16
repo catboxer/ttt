@@ -31,7 +31,7 @@ const Twitter = () => {
 
             return <div key={id}>
             <h4>{name}</h4>
-            <img src={profile_image_url_https} alt={name} className="images"/>
+            <img src={profile_image_url_https} alt={name} loading="lazy" className="images"/>
             <h5>{screen_name}</h5>
             <p>{full_text}</p>
           
