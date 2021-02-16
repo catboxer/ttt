@@ -1,10 +1,11 @@
-// import React from 'react'
-// import styled from 'styled-components'
-// import { graphql, useStaticQuery } from 'gatsby'
-// import { Link } from 'gatsby'
-// import Image from 'gatsby-image'
-// import Title from './Title'
-// ...GatsbyImageSharpFluid
+import React from 'react'
+import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
+import Image from 'gatsby-image'
+import Title from './Title'
+import {setColor, setRadius} from '../../styles'
+//...GatsbyImageSharpFluid
 
 const Recent = () => {
   return <Wrapper>Banner Recent</Wrapper>
@@ -18,23 +19,23 @@ const Wrapper = styled.div`
     margin-bottom: 1rem;
   }
   .img {
-    border-radius: var(--radius);
+    border-radius: ${setRadius};
   }
   h5 {
     font-size: 0.7rem;
     margin-bottom: 0.25rem;
     letter-spacing: 0;
     line-height: 1.2;
-    color: var(--clr-grey-1);
+    color: ${setColor.grey1};
   }
   p {
     font-size: 0.6rem;
     margin-bottom: 0;
-    color: var(--clr-grey-5);
+    color: ${setColor.grey5};
   }
   .post:hover {
     h5 {
-      color: var(--clr-primary-5);
+      color: ${setColor.primary5};
     }
   }
 `

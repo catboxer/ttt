@@ -1,8 +1,9 @@
 ---
 title: Accessibility On Your Website
-slug: accessibility-online
+slug: accessible-websites
 image: ./images/pexels-alexandre-saraiva-carniato-3044630.jpg
-date: 2020-10-03
+alt: person in wheel chair facing dirty wall
+date: 2021-02-06
 author: Rosalee Rester
 category: Accessibility
 ---
@@ -11,7 +12,7 @@ import { Link } from 'gatsby'
 
 # Accessibility
 
-Last month the trackpad on my laptop stopped working and I found out exactly how hard it is to navigate most websites. More often than not I got stuck in some menu or unable to access one or I'd tab through and not know where on the page I was because I was stuck behind some modal that was blocking the page.
+Last month the trackpad on my laptop stopped working and I found out exactly how hard it is to navigate most websites. More often than not I got stuck in some menu or unable to access one or I'd [tab through](https://www.matuzo.at/blog/testing-with-tab/) and not know where on the page I was because I was stuck behind some modal that was blocking the page.
 
 I also thought about what the Internet meant to people with disabilities who were asked to navigate a physical world that was less than friendly to them. It seems to me that at the very least our digital spaces should be made specifically for those who do not have the ease of movement through our physical world.
 
@@ -175,9 +176,6 @@ Use a meta viewport tag
 <meta name="vieport" content="width=device-width, initial-scale=1>"
 ```
 
-// images that are links or descriptions that you need to hide in a link.
-// https://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/C7
-
 To get started I am going to follow the steps below. This is a work in progress.
 
 1. Use my brower extension to point out obvious issues. I find Accessibility Insights easy to use. I also like axe.
@@ -188,11 +186,12 @@ To get started I am going to follow the steps below. This is a work in progress.
 6. Enlarge everything to 200% to make sure it is still readable.
 7. Check my urls to make sure they are descriptive
 8. Make sure all my inline video has CC enabled.
-9. Check my alt tags and add captions when necessary.
+9. Check my images and [ and add captions when necessary.](https://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/C7).
 10. Make sure to [tag my dynamic content ](https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/aria-landmarks/) so it will get reread on paint.
 11. Inject any [skip links](https://webaim.org/techniques/skipnav/#focus) where tabbing becomes annoying.
 
-I immediately found 22 errors on my index page and major issues with my small screen toggled menu and contact form. The dropdown menu was not available to the keyboard.
+I immediately found 22 errors on my index page and major issues with my small screen toggled menu and contact form. The menu on small screen was not available to the keyboard and this is taking me the longest time to get right.
+I had to use a [focus trap](https://www.npmjs.com/package/focus-trap-react) otherwise tabbing went behind the menu. Default behavior for these menus is that the menu does not close if the link and current page are a match. I assume because the page has no need to reload. This seemed annoying to me as I would expect the menu to close when I click a link.
 
 <Link to="/posts" className="btn center-btn">
   all posts

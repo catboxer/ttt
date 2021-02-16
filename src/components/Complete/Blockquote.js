@@ -3,6 +3,7 @@ import { FiInfo } from "react-icons/fi"
 import { TiWarningOutline } from "react-icons/ti"
 import { GoQuote } from "react-icons/go"
 import styled from "styled-components"
+import {setRadius, setColor} from "../../styles"
 
 const Blockquote = ({ children, display }) => {
   if (display === "warning")
@@ -43,10 +44,10 @@ const Blockquote = ({ children, display }) => {
 const Wrapper = styled.blockquote`
   .container {
     padding: 2rem 1.5rem;
-    background: var(--clr-grey-10);
-    border-radius: var(--radius);
-    color: var(--clr-grey-1);
-    border-left: 3px solid var(--clr-grey-5);
+    background: ${setColor.grey10};
+    border-radius: ${setRadius};
+    color: ${setColor.grey1};
+    border-left: 3px solid ${setColor.grey5};
     position: relative;
     margin: 2rem 0;
   }
@@ -60,19 +61,19 @@ const Wrapper = styled.blockquote`
     position: absolute;
     top: 0;
     left: -3px;
-    background: var(--clr-white);
+    background: ${setColor.mainWhite};
     transform: translate(-50%, -50%);
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 6px solid var(--clr-white);
+    border: 6px solid ${setColor.mainWhite};
   }
   .info {
-    background: var(--clr-primary-10);
-    color: var(--clr-primary-1);
-    border-color: var(--clr-primary-5);
+    background: ${setColor.primary10};
+    color: ${setColor.primary1};
+    border-color: ${setColor.primary5};
     .icon {
-      color: var(--clr-primary-5);
+      color: ${setColor.primary5};
     }
   }
   .warning {
@@ -91,14 +92,14 @@ const Wrapper = styled.blockquote`
       align-items: center;
     }
     font-style: italic;
-    color: var(--clr-grey-5);
+    color: ${setColor.grey5};
     line-height: 1.8;
     word-spacing: 3px;
     font-size: 1.2rem;
     margin: 2rem 0;
     .quote-icon {
       font-size: 6rem;
-      color: var(--clr-primary-5);
+      color: ${setColor.primary5};
     }
   }
 `

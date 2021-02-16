@@ -1,8 +1,9 @@
 ---
 title: SVG Animation
-slug: svg-animation-greenSock
+slug: svg-animation-greenSock-gsap
 image: ./images/pexels-picjumbocom-196645.jpg
-date: 2020-05-03
+alt: sketches, wireframes of a mock up
+date: 2021-01-04
 author: Rosalee Rester
 category: SVG
 ---
@@ -11,9 +12,9 @@ import { Link } from 'gatsby'
 
 ## SVG Animation
 
-During job interviews when people ask me what my biggest weakness is I tell them about my shiny objects disorder(SOD). I could be deep into something and suddenly find myself veering way off course.
+During job interviews when people ask me what my biggest weakness is I tell them I have SOD (Shiny Objects Disorder). I could be deep into something and suddenly find myself veering way off course.
 
-There I was studiously plugging along with React/Gatsby when I came across Frontmasters [SVG Essentials class](https://frontendmasters.com/courses/svg-essentials-animation/). Sarah Drasner, the instructor, gives a solid overview about what is so freakin' amazing about SVG animations. She has a fabulous [codepen](https://codepen.io/sdras) collection of SVG animations you should check out for inspiration. Here is one where she explains [how the GSAP timeline works](https://codepen.io/sdras/pen/ByEWON).
+There I was studiously plugging along with React/Gatsby when I came across Frontmasters [SVG Essentials class](https://frontendmasters.com/courses/svg-essentials-animation/). Sarah Drasner, the instructor, gives a solid overview about what is so amazing about SVG animations. She has a fabulous [codepen](https://codepen.io/sdras) collection of SVG animations you should check out for inspiration. Here is one where she explains [how the GSAP timeline works](https://codepen.io/sdras/pen/ByEWON).
 
 I had fooled around with CSS animation but the power of SVG animation had me spending more than a couple of days playing with greenSock on Codepen where they offer every module they have for [free](https://codepen.io/greenSock/pen/OPqpRJ). The SVGmorph and Text modules are crazy fun.
 
@@ -68,24 +69,6 @@ This video does a great job of explaining how to [grab elements from your DOM us
 ## React Gatsby
 
 https://greensock.com/forums/topic/19745-gsap-reactgatsby/
-
-```jsx
-import React from 'react'
-
-const Counter = () => {
-  const [count, setCount] = React.useState(0)
-  return (
-    <section className="counter">
-      <h4>show some love to MDX</h4>
-      <h4>likes {count}</h4>
-      <button className="btn btn-danger" onClick={() => setCount(count + 1)}>
-        i like mdx
-      </button>
-    </section>
-  )
-}
-export default Counter
-```
 
 <Link to="/posts" className="btn center-btn">
   all posts

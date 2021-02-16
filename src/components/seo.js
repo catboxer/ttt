@@ -26,9 +26,12 @@ const SEO = ({ title, description, image, article }) => {
 
   return (
     <Helmet title={seo.title} titleTemplate={titleTemplate}>
+    
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
-
+      <html lang="en" amp />
+      <link rel="preload" href="/fonts/fonts.css" as="style"></link>
+      {/* fix FOUC  <body className="hide-fouc" />*/}
       {seo.url && <meta property="og:url" content={seo.url} />}
 
       {(article ? true : null) && <meta property="og:type" content="article" />}
@@ -57,6 +60,7 @@ const SEO = ({ title, description, image, article }) => {
     </Helmet>
   )
 }
+
 export default SEO
 
 SEO.propTypes = {

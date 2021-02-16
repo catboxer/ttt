@@ -8,12 +8,13 @@ const Layout = ({ children }) => {
     setIsOpen(!isOpen)
   }
   return (
-    <>
+    <> 
   <Navbar toggle={toggle} isOpen={isOpen} setIsOpen={setIsOpen}/>
   <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} toggle={toggle}/>
-      <main id="#skip-main">{children}</main>
+      <main id="#main-content">{children}</main>
   <Footer/>
     </>
   )
 }
+
 export default Layout

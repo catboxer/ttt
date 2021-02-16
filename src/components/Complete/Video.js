@@ -1,6 +1,7 @@
 import React from 'react'
 import video from '../../assets/connect.mp4'
 import styled from 'styled-components'
+import {setRadius} from "../../styles"
 export const RegVideo = () => {
   return (
     <RegVideoWrapper>
@@ -20,6 +21,7 @@ export const Video = ({ src, title, ...props }) => {
           title={title}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           frameBorder="0"
+          loading="lazy"
           webkitallowfullscreen="true"
           mozallowfullscreen="true"
           allowFullScreen
@@ -53,7 +55,7 @@ const IframeVideoWrapper = styled.div`
     /* // Calculated from the aspect ration of the content (in case of 16:9 it is 9/16= 0.5625) */
     padding-top: 56.25%;
     position: relative;
-    border-radius: var(--radius);
+    border-radius: ${setRadius};
   }
 
   .video iframe {

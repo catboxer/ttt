@@ -4,6 +4,7 @@ import { FaRegClock } from 'react-icons/fa'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import {setColor, setRadius, setLetterSpacing} from '../../styles'
 
 const Post = ({frontmatter, excerpt, wordCount:{words}}) => {
   const {title, slug, image, date, category}=frontmatter;
@@ -37,19 +38,19 @@ const Wrapper = styled.article`
   }
   .img {
     margin-bottom: 1rem;
-    border-radius: var(--radius);
+    border-radius: ${setRadius};
     height: 17rem;
   }
   .category {
     display: inline-block;
     margin-bottom: 1rem;
-    background: var(--clr-grey-10);
+    background: ${setColor.grey10};
     padding: 0.25rem 0.5rem;
     text-transform: uppercase;
     font-weight: 700;
-    border-radius: var(--radius);
-    letter-spacing: var(--spacing);
-    color: var(--clr-grey-5);
+    border-radius: ${setRadius};
+    letter-spacing: ${setLetterSpacing};
+    color: ${setColor.grey5};
   }
   h3 {
     font-weight: 400;
@@ -59,19 +60,19 @@ const Wrapper = styled.article`
   .underline {
     width: 5rem;
     height: 1px;
-    background: var(--clr-grey-9);
+    background: ${setColor.grey9};
     margin: 0 auto;
     margin-bottom: 1rem;
   }
   p {
-    color: var(--clr-grey-5);
+    color: ${setColor.grey5};
     line-height: 1.8;
   }
   .link {
     text-transform: uppercase;
-    letter-spacing: var(--spacing);
+    letter-spacing: ${setLetterSpacing};
     font-weight: 700;
-    color: var(--clr-primary-5);
+    color: ${setColor.primary5};
     padding-bottom: 0.1rem;
     display: flex;
     align-items: center;
@@ -81,23 +82,23 @@ const Wrapper = styled.article`
     }
   }
   .link:hover {
-    border-color: var(--clr-primary-8);
-    color: var(--clr-primary-8);
+    border-color: ${setColor.primary8};
+    color: ${setColor.primary8};
   }
   footer {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid var(--clr-grey-9);
+    border-top: 1px solid ${setColor.grey9};
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--clr-grey-5);
+    color: ${setColor.grey5};
 
     & .date {
       display: flex;
       align-items: center;
       & .icon {
-        color: var(--clr-primary-5);
+        color: ${setColor.primary5};
         margin-right: 0.5rem;
       }
     }

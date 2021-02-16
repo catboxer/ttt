@@ -2,16 +2,20 @@ import React from 'react'
 import Title from './Title'
 // import Image from 'gatsby-image'
 import styled from 'styled-components'
+import {setColor} from '../../styles'
 import { graphql, useStaticQuery } from 'gatsby'
 //...GatsbyImageSharpFluid
 
 const Twitter = () => {
   const data = useStaticQuery(query)
   const {coderlist:{nodes:tweets}}=data;
-//console.log(tweets)
   return <Wrapper>
   <Title title="Twitter Favs"/>
-
+            <div className="twitter-link">
+                  <a href="https://twitter.com/i/lists/1351205591126048770" target="_blank" rel="noopener noreferrer">
+                  View Full List On Twitter
+                  </a>
+            </div>
           {tweets.map(tweet => {
             const {
                   id, 
@@ -19,24 +23,15 @@ const Twitter = () => {
                   user:{
                     name,
                     screen_name,
-                    profile_image_url
-                    }, 
-                    entities:{
-                      urls:[{url}]
+                    profile_image_url_https
                     },
                     } = tweet
         
 
 
             return <div key={id}>
-            <div>
-                  <a href="https://twitter.com/i/lists/1351205591126048770" target="_blank" rel="noopener noreferrer">
-                  view list
-                  </a>
-            </div>
-            {url}
             <h4>{name}</h4>
-            <img src={profile_image_url} alt={name} className="images"/>
+            <img src={profile_image_url_https} alt={name} className="images"/>
             <h5>{screen_name}</h5>
             <p>{full_text}</p>
           
@@ -46,19 +41,14 @@ const Twitter = () => {
 }
 const query = graphql`
 query TwitterList {
-  coderlist: allTwitterListsStatusesCodersList(limit: 4, filter: {user: {followers_count: {gt: 200}}, lang: {eq: "en"}, entities: {urls: {elemMatch: {url: {ne: ""}}}}}) {
+  coderlist: allTwitterListsStatusesCodersList(limit: 4, filter: {lang: {eq: "en"}, user: {followers_count: {gt: 300}}}) {
     nodes {
       full_text
       id
       user {
         name
-        profile_image_url
         screen_name
-      }
-      entities {
-        urls {
-          url
-        }
+        profile_image_url_https
       }
     }
   }
@@ -74,6 +64,28 @@ const Wrapper = styled.article`
     border: black 2px solid;
     border-radius: 50%;
   }
+  .twitter-link {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+  .twitter-link a{
+    color: ${setColor.primary5};
+    text-decoration:underline;
+  }
+  .twitter-link a:hover {
+    font-size: 1.5rem;
+    color: ${setColor.hotPink};
+  }
+  .twitter-link a:focus {
+    color: ${setColor.hotPink};
+
+  }
 `
 
 export default Twitter
+
+
+
+// entities:{
+//   urls:[{url}]
+// },

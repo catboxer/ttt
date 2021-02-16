@@ -2,6 +2,7 @@ import React from "react"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import theme from "prism-react-renderer/themes/vsDark"
 import styled from "styled-components"
+import { setRadius } from "../../styles";
 
 const PrismWrapper = props => {
   const className = props.children.props.className
@@ -37,7 +38,7 @@ const PrismWrapper = props => {
 const Pre = styled.pre`
   background: #1e1e1e;
   padding: 1rem 1.5rem;
-  border-radius: var(--radius);
+  border-radius: ${setRadius};
   margin: 3rem 0;
   font-size: 0.9rem;
   font-family: "Courier New", Courier, monospace;
@@ -55,8 +56,8 @@ const Pre = styled.pre`
     transform: translateY(-100%);
     text-transform: uppercase;
     padding: 0.05rem 0.85rem 0;
-    border-top-left-radius: var(--radius);
-    border-top-right-radius: var(--radius);
+    border-top-left-radius: ${setRadius};
+    border-top-right-radius: ${setRadius};
     background: #1e1e1e;
   }
 `

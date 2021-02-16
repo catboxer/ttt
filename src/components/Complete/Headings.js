@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {setColor} from '../../styles'
 
 const myH2 = ({ children, title }) => {
   if (title) {
@@ -14,7 +15,7 @@ const myH2 = ({ children, title }) => {
     <h2
       style={{
         margin: "2rem 0",
-        color: "var(--clr-grey-5)",
+        color: "hsl(210, 22%, 49%)",
       }}
     >
       {children}
@@ -26,12 +27,12 @@ const HeadingTwo = styled.div`
   .underline {
     width: 5rem;
     height: 5px;
-    background: var(--clr-primary-5);
+    background: ${setColor.primary5};
   }
 `
 const myH4 = props => {
   return (
-    <h3 style={{ margin: "2rem 0", color: "var(--clr-primary-5)" }}>
+    <h3 style={{ margin: "2rem 0", color: "hsl(180, 62%, 45%)" }}>
       {props.children}
     </h3>
   )

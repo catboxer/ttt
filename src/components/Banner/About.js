@@ -3,15 +3,16 @@ import Image from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby'
 import Title from './Title'
 import styled from 'styled-components'
+import {setColor} from '../../styles'
 //...GatsbyImageSharpFixed
 
 const About = () => {
   const data = useStaticQuery(query)
   return <Wrapper>
-  <Title title="about me"/>
+  <Title title="Info"/>
   <Image fixed={data.imageSharp.fixed} alt="photo of Rosalee Rester" className="img"/>
 
-    <h4>Learning To Code? </h4>
+    <h3>Learning To Code? </h3>
 <p>Cheatsheets, lessons learned, tips, links to curated resources. </p>
 </Wrapper>
 }
@@ -19,7 +20,7 @@ const About = () => {
 const Wrapper = styled.div`
   text-align: center;
   p {
-    color: var(--clr-grey-5);
+    color: ${setColor.grey5};
   }
   .img {
     border-radius: 50%;

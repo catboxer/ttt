@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import {setRadius, setColor} from '../../styles'
 const Counter = () => {
   const [count, setCount] = React.useState(0)
   return (
@@ -25,9 +26,9 @@ const Counter = () => {
 
 const Wrapper = styled.div`
   max-width: 500px;
-  border-radius: var(--radius);
+  border-radius: ${setRadius};
   padding: 1rem 1.5rem;
-  background: var(--clr-grey-10);
+  background: ${setColor.grey10};
   text-align: center;
   #value {
     font-size: 6rem;
@@ -37,28 +38,28 @@ const Wrapper = styled.div`
     margin: 0.5rem;
   }
   .dec-btn {
-    background: var(--clr-red-dark);
-    color: var(--clr-white);
+    background: ${setColor.darkRed};
+    color: ${setColor.mainWhite};
   }
   .dec-btn:hover {
-    background: var(--clr-red-light);
-    color: var(--clr-red-dark);
+    background: ${setColor.lightRed};
+    color: ${setColor.darkRed};
   }
   .inc-btn {
-    background: var(--clr-green-dark);
-    color: var(--clr-white);
+    background: ${setColor.darkGreen};
+    color: ${setColor.mainWhite};
   }
   .inc-btn:hover {
-    background: var(--clr-green-light);
-    color: var(--clr-green-dark);
+    background: ${setColor.lightGreen};
+    color: ${setColor.darkGreen};
   }
   .reset-btn {
-    background: var(--clr-black);
-    color: var(--clr-white);
+    background: ${setColor.mainBlack};
+    color: ${setColor.mainWhite};
   }
   .reset-btn:hover {
-    background: var(--clr-grey-5);
-    color: var(--clr-white);
+    background: ${setColor.grey5};
+    color: ${setColor.mainWhite};
   }
 `
 

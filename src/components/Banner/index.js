@@ -7,8 +7,9 @@ import BannerCategories from './BannerCategories'
 const Banner = () => {
   return <Wrapper>
     <About/>
-    <Twitter/>
     <BannerCategories/>
+    <Twitter/>
+    
     {/* <RelevantLinks/> */}
   </Wrapper>
 }

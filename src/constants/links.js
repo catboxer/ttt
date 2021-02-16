@@ -3,24 +3,24 @@ import { Link } from "gatsby"
 const Links = ({ styleClass, children, linkHandler, clickHandler }) => {
   return (
     <ul className={styleClass}>
-        <li>
-        <Link to="/" className="visually-hidden">
-          Home
+            {/* <li>
+        <Link to="#main-content" className="page-link sr-only">
+          Skip Link
         </Link>
-      </li>
+      </li> */}
       <li>
-        <Link to="/about-me" className="page-link" onClick={clickHandler} onKeyUp={linkHandler} >
+        <Link to="/about-me" className="page-link" onClick={clickHandler} onKeyPress={linkHandler} >
           About Me
         </Link>
       </li>
-    
+
       <li>
         <Link to="/posts" className="page-link" onClick={clickHandler} onKeyUp={linkHandler}>
           Blog
         </Link>
         {children}
       </li>
-       {/* <li>
+      {/* <li>
         <Link to="/about" className="page-link">
           Store
         </Link>

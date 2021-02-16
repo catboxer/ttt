@@ -1,0 +1,61 @@
+---
+title: Getting Rid of FOUC. Gatsby / Netlify / Styled Components
+slug: remove-FOUC-Gatsby-Netlify-Styled-Components
+image: ./images/callie-gibson-IT2S-W8-Tu8-unsplash.jpg
+alt: woman shaking her head with motion blur
+date: 2021-02-09
+author: Rosalee Rester
+category: Gatsby
+---
+
+import { Link } from 'gatsby'
+
+# FOUC
+
+When my blog finally went live on Netlify I started seeing that unwelcome flash of unstyled content. Locally it looked great. I started looking around for a solution.
+
+I am using styled components so I started with making sure all the [proper plugins installed](https://dev.to/mikaelia/removing-fouc-in-a-gatsby-app-28mg).
+
+I was thinking of adding or removing a body class via Helmet.
+
+Then I saw this solution [try this FOUC solution](https://curtistimson.co.uk/post/gatsbyjs/add-body-class-gatsbyjs-fouc/).
+
+Here's the updated code for gatsby-ssr.js:
+
+```jsx
+export const onRenderBody = ({ setBodyAttributes }) => {
+  setBodyAttributes({
+    className: 'no-js',
+  })
+}
+```
+
+and for gatsby-brower.js
+
+```jsx
+export const onClientEntry = () => {
+  window.addEventListener('load', () => {
+    document.body.className = document.body.className.replace(/\bno-js\b/, '')
+  })
+}
+```
+
+It appeared to add a class to my body and remove it upon load but it didn't solve my unstyled logo and fonts issue. Plus, it caused a long lag before anything else loaded. So, I tried a different solution.
+
+## Unstyled SVG
+
+For my svg Logo I discovered:
+a. that you can't have responsive SVGs or it will load with a viewport size of 100% causing a big flash.
+b. inline svg mitigates the fouc.
+
+## Unstyled Fonts
+
+I then tried installing [typography.js](https://kyleamathews.github.io/typography.js/) but quickly realized it would take a bit of work as I'd already set up my styled-components. I'd use it if I were just starting up a project but after all my time investment I installed the [gatsby-plugin-webfonts](https://www.gatsbyjs.com/plugins/gatsby-plugin-webfonts/) and this seemed to help a preload the fonts but fonts still slowed down the speed of my site so I decided to self host.
+
+I [downloaded this my Google fonts & font faces using this great tool](https://google-webfonts-helper.herokuapp.com/fonts/open-sans?subsets=latin) and added them into my static folder.
+
+It is much better but I'm still not completely satisfied.
+
+<Link to="/posts" className="btn center-btn">
+  all posts
+</Link>

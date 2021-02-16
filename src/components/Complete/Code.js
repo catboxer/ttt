@@ -3,10 +3,10 @@ const Code = ({ children }) => {
   return (
     <code
       style={{
-        background: "var(--clr-grey-10)",
-        color: "var(--clr-grey-5)",
+        background: "hsl(125, 33%, 96%)",
+        color: "hsl(210, 22%, 49%)",
         padding: "1rem",
-        borderRadius: "var(--radius)",
+        borderRadius:".25rem",
       }}
     >
       {children}

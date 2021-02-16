@@ -8,7 +8,7 @@ module.exports = {
     titleTemplate: `%s | Rosalee Rester`,
     url:`http://thethisthat.com`,
     image:`mainImg.png`,
-    twitterUsername:`@_the_this_that`,
+    twitterUsername:`@thethisthatblog`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

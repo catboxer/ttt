@@ -3,11 +3,12 @@ import Layout from '../components/layout'
 import Hero from '../components/Hero'
 import { graphql } from 'gatsby'
 import Posts from '../components/Posts'
-
+import SEO from '../components/seo'
 const PostsPage = ({ data }) => {
   const {allMdx:{nodes:posts}}=data;
 
   return <Layout>
+    <SEO title="Fight The Forgetting Curve Blog"/>
     <Hero showChair/>
     <Posts posts={posts} title="all posts"/>
   </Layout>
@@ -30,6 +31,7 @@ export const query = graphql`
           }
           slug
           title
+          alt
         }
         id
         wordCount {
@@ -39,4 +41,5 @@ export const query = graphql`
     }
   }
 `
+
 export default PostsPage

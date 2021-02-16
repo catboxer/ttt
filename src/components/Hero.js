@@ -2,7 +2,7 @@ import React from 'react'
 import ArmchairImg from "../assets/armchair.svg"
 import styled from 'styled-components'
 import CloudImg from "../assets/vector.svg"
-
+//import {setColor} from '../styles'
 const Hero = ({showChair}) => {
   return <Wrapper>
   { 
@@ -13,7 +13,7 @@ const Hero = ({showChair}) => {
 
 
 const Wrapper = styled.header`
-  background: var(--clr-primary-6);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, hsl(180, 57%, 50%)  60%);
   height: 15rem;
   position: relative;
   z-index: -1;

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {setColor} from '../../styles'
 const Title = ({ title }) => {
   return <Wrapper>
             <h4>{title}</h4>  
@@ -11,10 +12,10 @@ const Wrapper = styled.div`
   text-align: center;
   margin: 1.25rem 0;
   h4 {
-    color: var(--clr-grey-3);
+    color: ${setColor.grey3};
     text-transform: uppercase;
     font-weight: 500;
-    background: var(--clr-white);
+    background: ${setColor.mainWhite};
     display: inline-block;
     margin-bottom: 0;
     padding: 0 0.6rem;
@@ -26,7 +27,7 @@ const Wrapper = styled.div`
     width: 100%;
     height: 1.5px;
     transform: translateY(-50%);
-    background: var(--clr-primary-5);
+    background: ${setColor.primary5};
     z-index: -1;
   }
 `

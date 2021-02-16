@@ -6,10 +6,11 @@ import Image from 'gatsby-image'
 import Banner from '../components/Banner'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import {setColor, setRadius, setLetterSpacing} from '../styles'
 
 const PostTemplate = ({data}) => {
   const {mdx:{
-  frontmatter:{image, title, date, category},  
+  frontmatter:{image, title, date, category, alt},  
   body
   }} = data;
   return <Layout>
@@ -17,7 +18,7 @@ const PostTemplate = ({data}) => {
     <Wrapper>
       {/* posts */}
       <article>
-          <Image fluid={image.childImageSharp.fluid} alt={title}/>
+          <Image fluid={image.childImageSharp.fluid} alt={alt}/>
             <div className="post-info">
               <span>{category}</span>
               <h2>{title}</h2>
@@ -52,6 +53,7 @@ query GetSinglePost($slug:String) {
       }
       slug
       title
+      alt
     }
   }
 }
@@ -66,24 +68,24 @@ const Wrapper = styled.section`
     margin: 2rem 0 4rem 0;
     text-align: center;
     span {
-      background: var(--clr-primary-5);
-      color: var(--clr-white);
-      border-radius: var(--radius);
+      background: ${setColor.primary5};
+      color: ${setColor.mainWhite};
+      border-radius: ${setRadius};
       padding: 0.25rem 0.5rem;
       text-transform: uppercase;
-      letter-spacing: var(--spacing);
+      letter-spacing: ${setLetterSpacing};
     }
     h2 {
       margin: 1.25rem 0;
       font-weight: 400;
     }
     p {
-      color: var(--clr-grey-5);
+      color: ${setColor.grey5};
     }
     .underline {
       width: 5rem;
       height: 1px;
-      background: var(--clr-grey-9);
+      background: ${setColor.grey9};
       margin: 0 auto;
       margin-bottom: 1rem;
     }
