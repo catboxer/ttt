@@ -4,7 +4,7 @@ import Hero from '../components/Hero'
 import Banner from '../components/Banner'
 import styled from 'styled-components'
 import SEO from '../components/seo'
-import {setColor, setRadius, setLetterSpacing} from '../styles'
+import {setColor, setRadius, setLetterSpacing} from '../themes/styles'
 import {Link} from 'gatsby'
 const AboutMe = () => {
   return <Layout>

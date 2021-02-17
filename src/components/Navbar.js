@@ -1,10 +1,10 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import { Link } from 'gatsby'
 // import logo from '../assets/logo.svg'
 import Links from '../constants/links'
 import SocialLinks from '../constants/socialLinks'
 import styled from 'styled-components'
-import {setColor, setFont, setLetterSpacing, setMaxWidth, setRadius, setTransition} from '../styles'
+import {setColor, setFont, setLetterSpacing, setMaxWidth, setRadius, setTransition} from '../themes/styles'
 //import Categories from './Categories'
 
 

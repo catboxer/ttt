@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Categories from '../Categories'
 import Title from './Title'
-import {setLetterSpacing, setRadius, setColor, setTransition} from '../../styles'
+import {setLetterSpacing, setRadius, setColor, setTransition} from '../../themes/styles'
 const BannerCategories = () => {
   return <Wrapper>
   <Title title="Categories"/>

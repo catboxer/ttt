@@ -2,7 +2,7 @@ import React from 'react'
 import Post from './Post'
 import Banner from '../Banner'
 import styled from 'styled-components'
-import {setColor, setMaxWidth} from '../../styles'
+import {setColor, setMaxWidth} from '../../themes/styles'
 const Posts = ({posts, title}) => {
   return <Wrapper>
           <div className="posts">

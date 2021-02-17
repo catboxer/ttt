@@ -2,7 +2,7 @@ import React from 'react'
 import SocialLinks from '../constants/socialLinks'
 import styled from 'styled-components'
 import Grass from '../assets/grass.svg'
-import {setColor, setLetterSpacing, setTransition, setShadow} from '../styles'
+import {setColor, setLetterSpacing, setTransition, setShadow} from '../themes/styles'
 
 
 const Footer = () => {

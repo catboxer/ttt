@@ -1,7 +1,7 @@
 import React from 'react'
 import video from '../../assets/connect.mp4'
 import styled from 'styled-components'
-import {setRadius} from "../../styles"
+import {setRadius} from "../../themes/styles"
 export const RegVideo = () => {
   return (
     <RegVideoWrapper>

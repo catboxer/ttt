@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { Link } from 'gatsby'
 import Image from 'gatsby-image'
 import Title from './Title'
-import {setColor, setRadius} from '../../styles'
+import {setColor, setRadius} from '../../themes/styles'
 //...GatsbyImageSharpFluid
 
 const Recent = () => {

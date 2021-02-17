@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Hero from '../components/Hero'
 import SEO from '../components/seo'
 import styled from 'styled-components'
-import {setColor} from '../styles'
+import {setColor} from '../themes/styles'
 const NotFoundPage = () => 
 <Layout>
 <SEO title="Error Page"/>

@@ -4,7 +4,7 @@ import { FaRegClock } from 'react-icons/fa'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import {setColor, setRadius, setLetterSpacing} from '../../styles'
+import {setColor, setRadius, setLetterSpacing} from '../../themes/styles'
 
 const Post = ({frontmatter, excerpt, wordCount:{words}}) => {
   const {title, slug, image, date, category}=frontmatter;

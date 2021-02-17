@@ -1,7 +1,7 @@
 import React from "react"
 import {Link} from 'gatsby'
 import styled from 'styled-components'
-import {setColor} from '../styles'
+import {setColor} from '../themes/styles'
 import {
   FaEnvelope,
   FaGithubAlt,

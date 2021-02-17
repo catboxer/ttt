@@ -3,7 +3,7 @@ import Links from '../constants/links'
 // import Categories from '../components/Categories'
 import { IoMdClose } from 'react-icons/io'
 import styled from 'styled-components'
-import {setColor, setFont, setTransition} from '../styles'
+import {setColor, setFont, setTransition} from '../themes/styles'
 const FocusTrap = require('../../node_modules/focus-trap-react/dist/focus-trap-react');
 
 const Sidebar = ({isOpen, setIsOpen,toggle}) => {

@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 import Hero from '../components/Hero'
 import SEO from '../components/seo'
 import styled from 'styled-components'
-import {setColor, setFont, setRadius} from '../styles'
+import {setColor, setFont, setRadius} from '../themes/styles'
 const NewsLetter = () => {
  
   return <Layout>

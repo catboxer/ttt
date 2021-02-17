@@ -3,7 +3,7 @@ import { FiInfo } from "react-icons/fi"
 import { TiWarningOutline } from "react-icons/ti"
 import { GoQuote } from "react-icons/go"
 import styled from "styled-components"
-import {setRadius, setColor} from "../../styles"
+import {setRadius, setColor} from '../../themes/styles'
 
 const Blockquote = ({ children, display }) => {
   if (display === "warning")

@@ -1,13 +1,5 @@
 import { css, keyframes } from "styled-components";
 
-
-/*
-=============== 
-Variables
-===============
-*/
-
-
 export const setColor = {
   primary1: "hsl(180, 91%, 17%)",
   primary2: "hsl(180, 84%, 25%)",

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {setRadius, setColor} from '../../styles'
+import {setRadius, setColor} from '../../themes/styles'
 const Counter = () => {
   const [count, setCount] = React.useState(0)
   return (

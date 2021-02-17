@@ -6,7 +6,7 @@ import Image from 'gatsby-image'
 import Banner from '../components/Banner'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import {setColor, setRadius, setLetterSpacing} from '../styles'
+import {setColor, setRadius, setLetterSpacing} from '../themes/styles'
 
 const PostTemplate = ({data}) => {
   const {mdx:{

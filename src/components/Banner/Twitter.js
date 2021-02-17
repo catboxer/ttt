@@ -2,7 +2,7 @@ import React from 'react'
 import Title from './Title'
 // import Image from 'gatsby-image'
 import styled from 'styled-components'
-import {setColor} from '../../styles'
+import {setColor} from '../../themes/styles'
 import { graphql, useStaticQuery } from 'gatsby'
 //...GatsbyImageSharpFluid
 

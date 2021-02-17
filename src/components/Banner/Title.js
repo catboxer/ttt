@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {setColor} from '../../styles'
+import {setColor} from '../../themes/styles'
 const Title = ({ title }) => {
   return <Wrapper>
             <h4>{title}</h4>  

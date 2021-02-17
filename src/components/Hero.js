@@ -2,7 +2,7 @@ import React from 'react'
 import ArmchairImg from "../assets/armchair.svg"
 import styled from 'styled-components'
 import CloudImg from "../assets/vector.svg"
-import {setColor} from '../styles'
+import {setColor} from '../themes/styles'
 const Hero = ({showChair}) => {
   return <Wrapper>
   { 

@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { AiOutlineLike } from "react-icons/ai"
-import {setColor} from '../../styles'
+import {setColor} from '../../themes/styles'
 const LikeButton = () => {
   const [value, setValue] = React.useState(0)
   return (
