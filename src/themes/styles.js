@@ -27,7 +27,7 @@ export const setColor = {
   blue:"#a3d9e9",
   orange:"#d75727",
   mainWhite: "#fff",
-  mainBlack: "#222",
+  mainBlack: "#1a202c",
   darkRed: "hsl(360, 67%, 44%)",
   lightRed:"hsl(360, 71%, 66%)",
   darkGreen: "hsl(161, 62%, 41%)",

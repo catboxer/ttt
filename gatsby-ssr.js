@@ -1,5 +1,5 @@
 
-// import {wrapMDX} from './root-mdx'
+import {wrapMDX} from './root-mdx'
 
 
-// export const wrapRootElement = wrapMDX
+export const wrapRootElement = wrapMDX

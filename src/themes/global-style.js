@@ -7,20 +7,27 @@ import {setColor, setFont, setRadius, setMaxWidth, setTransition, setLetterSpaci
 export const GlobalStyle = createGlobalStyle`
   ${reset}
 *,
-::after,
-::before {
-  margin: 0;
-  padding: 0;
+*:after,
+*:before {
   box-sizing: border-box;
 }
-body {
+html {
   ${setFont.main}
-  background: ${setColor.mainWhite};
-  color: ${setColor.grey1};
-  line-height: 1.5;
-  font-size: 0.875rem;
-  height: 100vh;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 16px;
+  ${'' /* color: ${setColor.mainBlack}; */}
 }
+${'' /* body {
+  background: ${setColor.mainWhite};
+  line-height: 1.5;
+  height: 100vh;
+} */}
+body {
+  background: ${({theme}) => theme.background};
+  color: ${({theme})=> theme.text};
+  transition: all .50s linear;
+  }
 ul {
   list-style-type: none;
 }

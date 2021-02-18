@@ -10,10 +10,10 @@ export const largeFontTheme = {
 }
 
 export const lightTheme = {
-    body: '#FFF',
-    text: '#363537',
+    body: 'yellow',
+    text: 'pink',
     toggleBorder: '#FFF',
-    background: '#363537',
+    background: 'green',
 }
 export const darkTheme = {
     body: '#363537',

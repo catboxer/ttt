@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef} from 'react'
 import { Link } from 'gatsby'
 // import logo from '../assets/logo.svg'
 import Links from '../constants/links'
@@ -36,6 +36,7 @@ const Wrapper = styled.nav`
   display: flex;
   align-items: center;
   background: ${setColor.primary7};
+  
 
 .nav-center {
   width: 90vw;
@@ -94,6 +95,7 @@ const Wrapper = styled.nav`
   .page-link {
     margin-right: 1rem;
     font-size:3rem;
+    text-decoration: none;
   }
   .page-link {
     color:  ${setColor.mainBlack};

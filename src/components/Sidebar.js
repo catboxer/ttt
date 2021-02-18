@@ -92,6 +92,10 @@ const Wrapper = styled.div`
 .sidebar-links li {
   margin-bottom: 3rem;
 }
+
+a {
+    text-decoration: none;
+}
 .sidebar-links .page-link:hover {
     color: ${setColor.primary5};
     transform: translateY(-5px);
