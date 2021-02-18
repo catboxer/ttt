@@ -12,15 +12,15 @@ import { Link } from "gatsby"
 
 ### It started with the FOUC
 
-When my blog finally went live on Netlify I started seeing that unwelcome flash of unstyled content. Locally it looked great. I started looking around for a solution.
+When my blog finally went live on Netlify I saw that unwelcome flash of unstyled content on load. Locally it had looked great. What had happened? I started looking around for a solution and learned a lot along the way.
 
-I am using styled components so I started with making sure all the [proper plugins installed](https://dev.to/mikaelia/removing-fouc-in-a-gatsby-app-28mg).
+I am using styled components so I began with making sure all the [proper plugins installed](https://dev.to/mikaelia/removing-fouc-in-a-gatsby-app-28mg).
 
-I was thinking of adding or removing a body class via Helmet.
+I considered adding or removing a body class via Helmet so that the styles and js would load before showing the content.
 
 Then I saw this [FOUC solution using the gatsby-browser and server files](https://curtistimson.co.uk/post/gatsbyjs/add-body-class-gatsbyjs-fouc/).
 
-Here's the updated code for gatsby-ssr.js:
+If you want to try this solution here's the updated code for gatsby-ssr.js:
 
 ```jsx
 export const onRenderBody = ({ setBodyAttributes }) => {
