@@ -1,0 +1,31 @@
+---
+title: Accessibility Modes
+slug: accessible-website-modes
+image: ./images/michal-lis-hl_QkmafMaU-unsplash.jpg
+alt: broken tv cabinets on shelving in Chernobyl
+date: 2021-02-18
+author: Rosalee Rester
+category: Accessibility
+---
+
+import { Link } from "gatsby"
+
+### Skipping Ahead to Visual Accessbility Modes
+
+Instead of the usual Light & Dark mode options I thought it'd be fun to create a high-contrast Dark Mode & a Large Text Mode.
+
+It's pretty straight forward to use [styled-components ThemeProvider](https://www.smashingmagazine.com/2020/04/dark-mode-react-apps-styled-components/) to change modes across your website but it becomes a little hairy when using Gatsby.
+
+I decided to use the useContext hook to pass the state of the theme through my website. I set up all the state and functions in a separate AppProvider/AppContext file called context.js located in the components folder.
+
+I created a themes folder that holds my global-style, my style helper functions and a file called Themes.js to hold my various themes.
+
+In my root wrapper file I passed in my AppProvider and my Global Styles.
+
+Then, I used the useContext hook to pull in the state to toggle my menu button into my Navbar component and the toggle the theme button into my layout component.
+
+My ThemeProvider went into my context.js file where all my logic sits.
+
+<Link to="/posts" className="btn center-btn">
+  all posts
+</Link>

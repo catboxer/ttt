@@ -6,7 +6,7 @@ import Image from 'gatsby-image'
 import Banner from '../components/Banner'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import {setColor, setRadius, setLetterSpacing} from '../themes/styles'
+import {setRadius, setLetterSpacing} from '../themes/styles'
 
 const PostTemplate = ({data}) => {
   const {mdx:{
@@ -68,8 +68,8 @@ const Wrapper = styled.section`
     margin: 2rem 0 4rem 0;
     text-align: center;
     span {
-      background: ${setColor.primary5};
-      color: ${setColor.mainWhite};
+      background: ${({theme}) => theme.primary4};
+      color: ${({theme}) => theme.mainWhite};
       border-radius: ${setRadius};
       padding: 0.25rem 0.5rem;
       text-transform: uppercase;
@@ -80,12 +80,12 @@ const Wrapper = styled.section`
       font-weight: 400;
     }
     p {
-      color: ${setColor.grey5};
+      color: ${({theme}) => theme.grey3};
     }
     .underline {
       width: 5rem;
       height: 1px;
-      background: ${setColor.grey9};
+      background: ${({theme}) => theme.grey3};
       margin: 0 auto;
       margin-bottom: 1rem;
     }

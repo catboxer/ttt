@@ -3,7 +3,6 @@ import Image from 'gatsby-image'
 import { graphql, useStaticQuery } from 'gatsby'
 import Title from './Title'
 import styled from 'styled-components'
-import {setColor} from '../../themes/styles'
 //...GatsbyImageSharpFixed
 
 const About = () => {
@@ -19,9 +18,6 @@ const About = () => {
 
 const Wrapper = styled.div`
   text-align: center;
-  p {
-    color: ${setColor.grey5};
-  }
   .img {
     border-radius: 50%;
     border: black solid 2px;

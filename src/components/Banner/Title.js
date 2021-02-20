@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import {setColor} from '../../themes/styles'
+
 const Title = ({ title }) => {
   return <Wrapper>
-            <h4>{title}</h4>  
+            <h3>{title}</h3>  
             <div className="line"></div>
           </Wrapper>
 }
@@ -11,11 +11,10 @@ const Wrapper = styled.div`
   position: relative;
   text-align: center;
   margin: 1.25rem 0;
-  h4 {
-    color: ${setColor.grey3};
+  h3 {
     text-transform: uppercase;
     font-weight: 500;
-    background: ${setColor.mainWhite};
+    background: ${({theme}) => theme.mainWhite};
     display: inline-block;
     margin-bottom: 0;
     padding: 0 0.6rem;
@@ -27,7 +26,7 @@ const Wrapper = styled.div`
     width: 100%;
     height: 1.5px;
     transform: translateY(-50%);
-    background: ${setColor.primary5};
+    background: ${({theme}) => theme.primary4};
     z-index: -1;
   }
 `

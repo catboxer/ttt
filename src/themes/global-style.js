@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
-//import {ThemeContext} from 'styled-components'
-import {setColor, setFont, setRadius, setMaxWidth, setTransition, setLetterSpacing, setFixedWidth} from './styles'
+import {setFont, setRadius, setMaxWidth, setTransition, setLetterSpacing, setFixedWidth} from './styles'
 
 
 export const GlobalStyle = createGlobalStyle`
@@ -16,24 +15,29 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
   font-size: 16px;
-  ${'' /* color: ${setColor.mainBlack}; */}
+  ${'' /* color: ${({theme}) => theme.mainBlack}; */}
 }
 ${'' /* body {
-  background: ${setColor.mainWhite};
+  background: ${({theme}) => theme.mainWhite};
   line-height: 1.5;
   height: 100vh;
 } */}
 body {
-  background: ${({theme}) => theme.background};
-  color: ${({theme})=> theme.text};
+  background: ${({theme}) => theme.mainWhite};
+  color: ${({theme})=> theme.grey3};
   transition: all .50s linear;
   }
 ul {
   list-style-type: none;
 }
-${'' /* a {
+::placeholder {
+  color: ${({theme}) => theme.grey3};
+  opacity: 1;
+}
+a {
   text-decoration: none;
-} */}
+  color:${({theme})=> theme.hotPink};
+}
 h2,
 h3,
 h4 {
@@ -44,8 +48,8 @@ h4 {
   ${setFont.subheading}
 }
 h1 {
-  font-size: 2.25rem;
-  ${setFont.heading}
+  font-size: 3rem;
+  ${setFont.heading};
   margin-bottom: 1rem;
 }
 h2 {
@@ -59,11 +63,12 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: ${setColor.grey3};
+  color: ${({theme}) => theme.grey3};
 }
 @media screen and (min-width: 800px) {
   h1 {
-    font-size: 3rem;
+    color:${({theme}) => theme.test.test1};
+    font-size: ${({theme}) => theme.phheading1.fontsize};
     margin-bottom: 2rem;
   }
   h2 {
@@ -89,8 +94,8 @@ p {
 .btn,
 .btn-danger {
   text-transform: uppercase;
-  background: ${setColor.primary5};
-  color: ${setColor.primary10};
+  background: ${({theme}) => theme.primary4};
+  color: ${({theme}) => theme.primary10};
   padding: 0.375rem 0.75rem;
   letter-spacing: ${setLetterSpacing};
   display: inline-block;
@@ -104,16 +109,16 @@ p {
   border-radius: ${setRadius};
 }
 .btn:hover {
-  color: ${setColor.primary1};
-  background: ${setColor.primary8};
+  color: ${({theme}) => theme.primary1};
+  background: ${({theme}) => theme.primary8};
 }
 .btn-danger {
-  color: ${setColor.mainWhite};
-  background: ${setColor.darkRed};
+  color: ${({theme}) => theme.mainWhite};
+  background: ${({theme}) => theme.darkRed};
 }
 .btn-danger:hover {
-  color: ${setColor.darkRed};
-  background: ${setColor.lightRed};
+  color: ${({theme}) => theme.darkRed};
+  background: ${({theme}) => theme.lightRed};
 }
 .center-btn {
   display: block;
@@ -134,7 +139,7 @@ p {
   }
 }
 .bg-grey {
-  background: ${setColor.grey10};
+  background: ${({theme}) => theme.grey10};
 }
 /*
 ===============
@@ -142,8 +147,8 @@ Testing Post and Components
 ===============
 */
 .code {
-  background: #1e1e1e;
-  color: ${setColor.primary5};
+  background: ${({theme}) => theme.grey1};
+  color: ${({theme}) => theme.primary4};
   padding: 1rem 1.5rem;
   border-radius: ${setRadius};
   margin: 2rem 0;
@@ -158,17 +163,17 @@ Testing Post and Components
   line-height: 1.5;
 }
 .nice-text {
-  background: ${setColor.primary10};
+  background:${({theme}) => theme.primary10};
   padding: 2rem 1.5rem;
-  color: ${setColor.grey1};
+  color: ${({theme}) => theme.grey1};
   border-radius: ${setRadius};
-  border-left: 3px solid ${setColor.primary5};
-  color: ${setColor.mainBlack};
+  border-left: 3px solid ${({theme}) => theme.primary4};
+  color: ${({theme}) => theme.mainBlack};
   position: relative;
 }
 .nice-text h4,
 .nice-text p {
-  color: ${setColor.mainBlack};
+  color: ${({theme}) => theme.mainBlack};
 }
 .nice-text p {
   margin-bottom: 0;
@@ -183,13 +188,13 @@ Testing Post and Components
   position: absolute;
   top: 0;
   left: -3px;
-  background: ${setColor.mainWhite};
+  background: ${({theme}) => theme.mainWhite};
   transform: translate(-50%, -50%);
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 6px solid ${setColor.mainWhite};
-  color: ${setColor.primary5};
+  border: 6px solid ${({theme}) => theme.mainWhite};
+  color: ${({theme}) => theme.primary4};
 }
 .mdx-page {
   width: 90vw;

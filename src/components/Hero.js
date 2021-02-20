@@ -2,9 +2,8 @@ import React from 'react'
 import ArmchairImg from "../assets/armchair.svg"
 import styled from 'styled-components'
 import CloudImg from "../assets/vector.svg"
-import {setColor} from '../themes/styles'
 const Hero = ({showChair}) => {
-  return <Wrapper>
+  return  <Wrapper>
   { 
     showChair && <Image src={ArmchairImg} alt="hand-drawn yellow armchair"/>
   }
@@ -13,8 +12,8 @@ const Hero = ({showChair}) => {
 
 
 const Wrapper = styled.header`
-  background: ${setColor.primary7};
-  /* linear-gradient(0deg, rgba(255,255,255,1) 0%, hsl(180, 57%, 50%)  60%); */
+  background: ${({theme}) => theme.primary7};
+  margin-bottom: 2rem;
   height: 6rem;
   position: relative;
   z-index: -1;

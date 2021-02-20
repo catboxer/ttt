@@ -12,9 +12,9 @@ const query = graphql `
 const Categories = () => {
   const {allMdx:{distinct}} = useStaticQuery(query)
   return <ul className="categories">
-    {distinct.map((category,index)=> <li key={index}>
+    {distinct.map((category,index)=> <li key={index}><h4>
     <Link to={`/${category}`} className="category">
-    {category}</Link></li>)}
+    {category}</Link></h4></li>)}
   </ul>
 }
 

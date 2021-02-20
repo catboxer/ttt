@@ -2,7 +2,6 @@ import React from 'react'
 import Title from './Title'
 // import Image from 'gatsby-image'
 import styled from 'styled-components'
-import {setColor} from '../../themes/styles'
 import { graphql, useStaticQuery } from 'gatsby'
 //...GatsbyImageSharpFluid
 
@@ -12,9 +11,9 @@ const Twitter = () => {
   return <Wrapper>
   <Title title="Twitter Favs"/>
             <div className="twitter-link">
-                  <a href="https://twitter.com/i/lists/1351205591126048770" target="_blank" rel="noopener noreferrer">
+                <h4> <a href="https://twitter.com/i/lists/1351205591126048770" target="_blank" rel="noopener noreferrer">
                   View Full List On Twitter
-                  </a>
+                  </a></h4> 
             </div>
           {tweets.map(tweet => {
             const {
@@ -66,20 +65,19 @@ const Wrapper = styled.article`
   }
   .twitter-link {
     margin-bottom: 1rem;
-    font-size: 1rem;
   }
-  .twitter-link a{
-    color: ${setColor.primary5};
+  /* .twitter-link a{
+    color: ${({theme}) => theme.primary4};
     text-decoration:underline;
   }
   .twitter-link a:hover {
     font-size: 1.5rem;
-    color: ${setColor.hotPink};
+    color: ${({theme}) => theme.hotPink};
   }
   .twitter-link a:focus {
-    color: ${setColor.hotPink};
+    color: ${({theme}) => theme.hotPink};
 
-  }
+  } */
 `
 
 export default Twitter

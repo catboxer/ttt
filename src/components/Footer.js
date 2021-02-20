@@ -1,32 +1,28 @@
 import React from 'react'
-import SocialLinks from '../constants/socialLinks'
+//import SocialLinks from '../constants/socialLinks'
 import styled from 'styled-components'
 import Grass from '../assets/grass.svg'
-import {setColor, setLetterSpacing, setTransition, setShadow} from '../themes/styles'
+import { setLetterSpacing, setTransition, setShadow} from '../themes/styles'
 
 
 const Footer = () => {
   return <Wrapper >
-    <div className="footer">
-      <SocialLinks styleClass="footer-icons"/>
-      <p>
+      <h4>
         &copy; {new Date().getFullYear()} The This That All Rights Reserved
-      </p>
-    </div>
+      </h4>
   </Wrapper>
 }
 
 
 const Wrapper = styled.footer`
-.footer {
   height: 12rem;
   text-align: center;
   display: grid;
   place-items: end center;
   position: relative;
   padding-bottom: 2rem;
-}
-.footer:after {
+
+:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -36,7 +32,7 @@ const Wrapper = styled.footer`
   background: url(${Grass});
   background-size: cover;
 }
-.footer-icons {
+/* .footer-icons {
   display: flex;
   justify-content: center;
   line-height: 1;
@@ -53,12 +49,14 @@ const Wrapper = styled.footer`
 }
 .footer-icons li:hover {
   transform: translateY(-10%);
-}
-.footer p {
+} */
+h4 {
   margin-bottom: 0;
-  color: ${setColor.mainBlack};
+  color: ${({theme}) => theme.mainWhite};
+  text-shadow: 2px 2px #000;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: ${setLetterSpacing};;
+  letter-spacing: ${setLetterSpacing(.5)};;
 }
 `
 export default Footer

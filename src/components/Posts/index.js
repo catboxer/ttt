@@ -2,7 +2,7 @@ import React from 'react'
 import Post from './Post'
 import Banner from '../Banner'
 import styled from 'styled-components'
-import {setColor, setMaxWidth} from '../../themes/styles'
+import {setMaxWidth} from '../../themes/styles'
 const Posts = ({posts, title}) => {
   return <Wrapper>
           <div className="posts">
@@ -36,7 +36,7 @@ const Wrapper = styled.section`
 .posts-title {
   font-weight: 700;
   text-transform: uppercase;
-  color: ${setColor.hotPink};
+  color: ${({theme}) => theme.hotPink};
   font-size: 1.25rem;
   margin-bottom: 2.5rem;
 }

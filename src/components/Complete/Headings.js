@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {setColor} from '../../themes/styles'
+
 
 const myH2 = ({ children, title }) => {
   if (title) {
@@ -27,7 +27,7 @@ const HeadingTwo = styled.div`
   .underline {
     width: 5rem;
     height: 5px;
-    background: ${setColor.primary5};
+    background: ${({theme}) => theme.primary4};
   }
 `
 const myH4 = props => {

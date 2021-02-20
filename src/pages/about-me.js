@@ -4,7 +4,7 @@ import Hero from '../components/Hero'
 import Banner from '../components/Banner'
 import styled from 'styled-components'
 import SEO from '../components/seo'
-import {setColor, setRadius, setLetterSpacing} from '../themes/styles'
+import {setRadius, setLetterSpacing} from '../themes/styles'
 import {Link} from 'gatsby'
 const AboutMe = () => {
   return <Layout>
@@ -45,8 +45,8 @@ const Wrapper = styled.section`
     margin: 2rem 0 4rem 0;
     text-align: center;
     span {
-      background: ${setColor.primary5};
-      color: ${setColor.mainWhite};
+      background: ${({theme}) => theme.primary4};
+      color: ${({theme}) => theme.mainWhite};
       border-radius: ${setRadius};
       padding: 0.25rem 0.5rem;
       text-transform: uppercase;
@@ -57,12 +57,12 @@ const Wrapper = styled.section`
       font-weight: 400;
     }
     p {
-      color: ${setColor.grey5};
+      color: ${({theme}) => theme.grey5};
     }
     .underline {
       width: 5rem;
       height: 1px;
-      background: ${setColor.grey9};
+      background: ${({theme}) => theme.grey9};
       margin: 0 auto;
       margin-bottom: 1rem;
     }
