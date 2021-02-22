@@ -72,7 +72,6 @@ const Wrapper = styled.article`
     text-transform: uppercase;
     letter-spacing: ${setLetterSpacing};
     font-weight: 700;
-    /* color: ${({theme}) => theme.primary2}; */
     padding-bottom: 0.1rem;
     display: flex;
     align-items: center;
@@ -115,7 +114,7 @@ const Wrapper = styled.article`
   }
   @media (min-width: 992px) {
     & {
-      display: grid;
+      display: ${({theme}) => theme.display};
       grid-template-columns: 30rem 1fr;
       column-gap: 1.5rem;
       .info {

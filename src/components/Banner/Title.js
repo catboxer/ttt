@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Title = ({ title }) => {
   return <Wrapper>
-            <h3>{title}</h3>  
+            <h2>{title}</h2>  
             <div className="line"></div>
           </Wrapper>
 }
@@ -11,9 +11,9 @@ const Wrapper = styled.div`
   position: relative;
   text-align: center;
   margin: 1.25rem 0;
-  h3 {
+  h2 {
     text-transform: uppercase;
-    font-weight: 500;
+    font-size: ${({theme}) => theme.phheading3.fontsize};
     background: ${({theme}) => theme.mainWhite};
     display: inline-block;
     margin-bottom: 0;

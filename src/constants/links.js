@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+
 const Links = ({ styleClass, children, linkHandler, clickHandler }) => {
   return (
     <ul className={styleClass}>
@@ -10,7 +11,7 @@ const Links = ({ styleClass, children, linkHandler, clickHandler }) => {
       </li> */}
       <li>
         <Link to="/about-me" className="page-link" onClick={clickHandler} onKeyPress={linkHandler} >
-          About Me
+          About
         </Link>
       </li>
 

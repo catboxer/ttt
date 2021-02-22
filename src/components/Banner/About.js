@@ -11,7 +11,7 @@ const About = () => {
   <Title title="Info"/>
   <Image fixed={data.imageSharp.fixed} alt="photo of Rosalee Rester" className="img"/>
 
-    <h3>Learning To Code? </h3>
+    <h2>Learning To Code? </h2>
 <p>Cheatsheets, lessons learned, tips, links to curated resources. </p>
 </Wrapper>
 }

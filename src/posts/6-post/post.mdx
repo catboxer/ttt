@@ -10,21 +10,70 @@ category: Accessibility
 
 import { Link } from "gatsby"
 
-### Skipping Ahead to Visual Accessbility Modes
+## Skipping Ahead to Visual Accessbility Modes
 
-Instead of the usual Light & Dark mode options I thought it'd be fun to create a high-contrast Dark Mode & a Large Text Mode.
+I wanted to add in a skip link at the top of each page. If, every time you go to a new page, you have to [tab through the banner ad and all the navigation](https://www.schoolhouse.com/) just to get to the main content you will appreciate the [skip link](https://webaim.org/techniques/skipnav/). I wanted mine to be visible. I also wanted people to be able to toggle a larger font and a dark mode so I added in an accessibility toolbar using icons at the top left with the skip link following the logo.
 
-It's pretty straight forward to use [styled-components ThemeProvider](https://www.smashingmagazine.com/2020/04/dark-mode-react-apps-styled-components/) to change modes across your website but it becomes a little hairy when using Gatsby.
+### Styled-Components ThemeProvider
 
-I decided to use the useContext hook to pass the state of the theme through my website. I set up all the state and functions in a separate AppProvider/AppContext file called context.js located in the components folder.
+It's pretty straight forward to use [styled-components ThemeProvider](https://www.smashingmagazine.com/2020/04/dark-mode-react-apps-styled-components/) to change modes across your website but it becomes a little hairy when using Gatsby because the root React element doesn't mount the index.js so to share state you have to use the wrapRootElement.
 
-I created a themes folder that holds my global-style, my style helper functions and a file called Themes.js to hold my various themes.
+I decided to use the useContext hook to pass all the different states through my website. I wrapped that AppProvider around everything that I exported as my wrapRootElement.
 
-In my root wrapper file I passed in my AppProvider and my Global Styles.
+I am a beginner in Gatsby so I have a suspicion this won't pass best practices and that my terminology is off. But, it works and I thought I'd put it out there for feedback.
 
-Then, I used the useContext hook to pull in the state to toggle my menu button into my Navbar component and the toggle the theme button into my layout component.
+Here is my useContext setup.
 
-My ThemeProvider went into my context.js file where all my logic sits.
+```jsx
+const AppContext = React.createContext()
+
+const AppProvider = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false)
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const [theme, setTheme] = useState("light")
+  const themeToggler = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light")
+  }
+  const [fontSize, setFontSize] = useState("regular")
+  const fontSizeToggler = () => {
+    fontSize === "regular" ? setFontSize("large") : setFontSize("regular")
+  }
+  return (
+    <AppContext.Provider
+      value={{
+        themeToggler,
+        toggle,
+        isOpen,
+        setIsOpen,
+        theme,
+        setTheme,
+        setFontSize,
+        fontSize,
+        fontSizeToggler,
+      }}
+    >
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <ThemeProvider
+          theme={fontSize === "regular" ? regularTextTheme : largeTextTheme}
+        >
+          {children}
+        </ThemeProvider>
+      </ThemeProvider>
+    </AppContext.Provider>
+  )
+}
+```
+
+### Styles
+
+I switched the css over to styled components, created a global-style for global elements and added helper functions to centralize styles. I began to really understand the difficulty in taking someone else's CSS and massage it into something that works for me when trying to add two modes for theme colors and two modes for font sizes.
+
+I will go back and streamline my styles once I take a CSS refresher cause lord knows I need one. When I tested it with google page speed the desktop dropped 6 points from additional long main-thread tasks.
+
+If you want to see the styles they are all located in my themes folder.
 
 <Link to="/posts" className="btn center-btn">
   all posts

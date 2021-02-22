@@ -4,7 +4,7 @@ import {AppContext} from './context'
 // import Categories from '../components/Categories'
 import { IoMdClose } from 'react-icons/io'
 import styled from 'styled-components'
-import {setFont, setTransition} from '../themes/styles'
+import {setFont, setTransition, media} from '../themes/styles'
 const FocusTrap = require('../../node_modules/focus-trap-react/dist/focus-trap-react');
 
 const Sidebar = () => {
@@ -86,16 +86,21 @@ const Wrapper = styled.div`
     border-radius:0; 
     visibility: visible;
 }
-
 .sidebar-container {
-  width: 55%;
+  width:13%;
 }
 .sidebar-links li {
   margin-bottom: 3rem;
 }
-
 a {
     text-decoration: none;
+}
+.sidebar-links .page-link {
+  ${setFont.heading};
+  font-size: 2rem;
+  display: block;
+  color: #fff;
+  font-weight: 700;
 }
 .sidebar-links .page-link:hover {
     color: ${({theme}) => theme.primary4};
@@ -104,13 +109,6 @@ a {
 .sidebar-links .page-link:focus {
     color: ${({theme}) => theme.primary4};
     transform: translateY(-5px);
-}
-.sidebar-links .page-link {
-  ${setFont.heading};
-  font-size: 2rem;
-  display: block;
-  color: ${({theme}) => theme.mainWhite};
-  font-weight: 700;
 }
 .sidebar .categories {
   flex-direction: column;
@@ -127,7 +125,7 @@ a {
 }
 .close-btn {
   position: absolute;
-  color: ${({theme}) => theme.mainWhite};
+  color: #fff;
   top: 1rem;
   right: 1rem;
   background: transparent;
@@ -143,12 +141,12 @@ a {
     color: ${({theme}) => theme.primary4};
     transform: translateY(-5px);
 }
-@media screen and (min-width: 800px) {
+${media.tablet `
   .sidebar {
     transform: translateX(-100%);
   }
+  `
 }
-
 `
 
 export default Sidebar

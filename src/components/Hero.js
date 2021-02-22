@@ -2,6 +2,7 @@ import React from 'react'
 import ArmchairImg from "../assets/armchair.svg"
 import styled from 'styled-components'
 import CloudImg from "../assets/vector.svg"
+import {media} from './../themes/styles'
 const Hero = ({showChair}) => {
   return  <Wrapper>
   { 
@@ -14,26 +15,27 @@ const Hero = ({showChair}) => {
 const Wrapper = styled.header`
   background: ${({theme}) => theme.primary7};
   margin-bottom: 2rem;
-  height: 6rem;
+  height: 4rem;
   position: relative;
-  z-index: -1;
     &:after{
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    height: 6rem;
+    height: 4rem;
     width: 100%;
     background: url(${CloudImg});
     background-size: cover;
     }
-@media screen and (min-width: 800px){
-  height: 12rem;
-}
+  ${media.tablet `
+    height: 12rem;
+      &:after{
+      height: 8rem;
+    `}
 `
 const Image = styled.img`
 display: none;
-@media screen and (min-width: 800px){
+${media.tablet `
   display: inline-block;
     padding-bottom: 1em;
     width: 12rem;
@@ -43,7 +45,8 @@ display: none;
     bottom: 0;
     left: 70%;
     transform: translate(-20%, 15%);
-    z-index: 4;
-}
+    z-index: 4; 
+    `
+  }
 `
 export default Hero

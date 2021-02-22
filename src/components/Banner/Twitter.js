@@ -11,9 +11,9 @@ const Twitter = () => {
   return <Wrapper>
   <Title title="Twitter Favs"/>
             <div className="twitter-link">
-                <h4> <a href="https://twitter.com/i/lists/1351205591126048770" target="_blank" rel="noopener noreferrer">
+              <a href="https://twitter.com/i/lists/1351205591126048770" target="_blank" rel="noopener noreferrer">
                   View Full List On Twitter
-                  </a></h4> 
+              </a>
             </div>
           {tweets.map(tweet => {
             const {
@@ -29,9 +29,9 @@ const Twitter = () => {
 
 
             return <div key={id}>
-            <h4>{name}</h4>
-            <img src={profile_image_url_https} alt={name} loading="lazy" className="images"/>
-            <h5>{screen_name}</h5>
+            <h3>{name}</h3>
+            <img width="72px" height="72px" src={profile_image_url_https} alt={name} loading="lazy" className="images"/>
+            <p>{screen_name}</p>
             <p>{full_text}</p>
           
             </div> 
@@ -55,29 +55,13 @@ query TwitterList {
 `
 const Wrapper = styled.article`
   .images {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem; */
     display: inline-block;
-    height: 3rem;
     border: black 2px solid;
     border-radius: 50%;
   }
   .twitter-link {
     margin-bottom: 1rem;
   }
-  /* .twitter-link a{
-    color: ${({theme}) => theme.primary4};
-    text-decoration:underline;
-  }
-  .twitter-link a:hover {
-    font-size: 1.5rem;
-    color: ${({theme}) => theme.hotPink};
-  }
-  .twitter-link a:focus {
-    color: ${({theme}) => theme.hotPink};
-
-  } */
 `
 
 export default Twitter

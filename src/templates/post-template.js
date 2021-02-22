@@ -6,7 +6,7 @@ import Image from 'gatsby-image'
 import Banner from '../components/Banner'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import {setRadius, setLetterSpacing} from '../themes/styles'
+import {setRadius, setLetterSpacing, media} from '../themes/styles'
 
 const PostTemplate = ({data}) => {
   const {mdx:{
@@ -17,7 +17,7 @@ const PostTemplate = ({data}) => {
     <Hero/>
     <Wrapper>
       {/* posts */}
-      <article>
+      <article id="main-content">
           <Image fluid={image.childImageSharp.fluid} alt={alt}/>
             <div className="post-info">
               <span>{category}</span>
@@ -90,17 +90,19 @@ const Wrapper = styled.section`
       margin-bottom: 1rem;
     }
   }
-  @media (min-width: 992px) {
+  ${media.desktop `
     & {
       width: 92vw;
     }
+    `
   }
-  @media (min-width: 1170px) {
+  ${media.large `
     & {
       display: grid;
       grid-template-columns: 1fr 200px;
       column-gap: 4rem;
     }
+    `
   }
 `
 

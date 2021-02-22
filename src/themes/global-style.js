@@ -1,8 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
-import {setFont, setRadius, setMaxWidth, setTransition, setLetterSpacing, setFixedWidth} from './styles'
+import {setFont, setRadius, setMaxWidth, setTransition, setLetterSpacing, setFixedWidth, media} from './styles'
 
-
+// Global Styles Template
 export const GlobalStyle = createGlobalStyle`
   ${reset}
 *,
@@ -14,109 +14,117 @@ html {
   ${setFont.main}
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-size: 16px;
-  ${'' /* color: ${({theme}) => theme.mainBlack}; */}
+  font-size: ${({theme}) => theme.phparagraph.fontsize};
 }
-${'' /* body {
-  background: ${({theme}) => theme.mainWhite};
-  line-height: 1.5;
-  height: 100vh;
-} */}
 body {
   background: ${({theme}) => theme.mainWhite};
   color: ${({theme})=> theme.grey3};
   transition: all .50s linear;
+  height: 100vh;
+  margin: 0;
   }
+h1,
+h2,
+h3,
+h4 {
+  ${({theme}) => theme.phletterspacing};
+  text-transform: capitalize;
+  line-height: ${({theme}) => theme.phlineheight};
+  ${({theme}) => theme.phheadingmarginbottom};
+  
+}
+h1{
+  color:${({theme}) => theme.grey1};
+  ${setFont.heading};
+  font-size: ${({theme}) => theme.phheading1.fontsize};
+}
+h2 {
+  color:${({theme}) => theme.grey1};
+  ${setFont.subheading};
+  font-size: ${({theme}) => theme.phheading2.fontsize};
+}
+h3 {
+  color: ${({theme}) => theme.primary4};
+  ${setFont.subheading};
+  font-size: ${({theme}) => theme.phheading3.fontsize};
+}
+h4 {
+  color: ${({theme}) => theme.primary4};
+  ${setFont.subheading};
+  font-size: ${({theme}) => theme.phheading4.fontsize};
+}
+p {
+  ${setFont.main};
+  font-size: ${({theme}) => theme.phparagraph.fontsize};
+  margin-bottom: ${({theme}) => theme.phparagraph.marginbottom};
+  line-height: ${({theme}) => theme.phlineheight};
+}
 ul {
-  list-style-type: none;
+  list-style-type: ${({theme}) => theme.ul};
 }
 ::placeholder {
   color: ${({theme}) => theme.grey3};
   opacity: 1;
 }
 a {
-  text-decoration: none;
+  text-decoration: ${({theme}) => theme.a};
   color:${({theme})=> theme.hotPink};
 }
+${media.tablet`
+h1 {  
+    font-size: ${({theme}) => theme.heading1.fontsize};
+    margin-bottom:${({theme}) => theme.headingmarginbottom};
+  }
+h2 {
+  font-size: ${({theme}) => theme.heading2.fontsize};
+  }
+h3 {
+  font-size: ${({theme}) => theme.heading3.fontsize};
+  }
+h4 {
+  font-size: ${({theme}) => theme.heading4.fontsize};
+  }
+p {
+  font-size: ${({theme}) => theme.paragraph.fontsize};
+  line-height: ${({theme}) => theme.lineheight};
+  }
+h1,
 h2,
 h3,
 h4 {
-  letter-spacing: ${setLetterSpacing};
-  text-transform: capitalize;
-  line-height: 1.25;
-  margin-bottom: 0.75rem;
-  ${setFont.subheading}
-}
-h1 {
-  font-size: 3rem;
-  ${setFont.heading};
-  margin-bottom: 1rem;
-}
-h2 {
-  font-size: 1.75rem;
-}
-h3 {
-  font-size: 1.25rem;
-}
-h4 {
-  font-size: 0.875rem;
-}
-p {
-  margin-bottom: 1.25rem;
-  color: ${({theme}) => theme.grey3};
-}
-@media screen and (min-width: 800px) {
-  h1 {
-    color:${({theme}) => theme.test.test1};
-    font-size: ${({theme}) => theme.phheading1.fontsize};
-    margin-bottom: 2rem;
+  line-height: ${({theme}) => theme.lineheight};
+  margin-bottom:${({theme}) => theme.headingmarginbottom};
   }
-  h2 {
-    font-size: 2.25rem;
-  }
-  h3 {
-    font-size: 1.75rem;
-  }
-  h4 {
-    font-size: 1rem;
-  }
-  body {
-    font-size: 1rem;
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    line-height: 1;
-  }
-}
+`}
 /*  global classes */
 .btn,
 .btn-danger {
   text-transform: uppercase;
-  background: ${({theme}) => theme.primary4};
-  color: ${({theme}) => theme.primary10};
+  background: ${({theme}) => theme.hotPink};
+  color: #fff;
   padding: 0.375rem 0.75rem;
   letter-spacing: ${setLetterSpacing};
   display: inline-block;
+  ${setFont.heading}
   font-weight: 400;
   -webkit-transition: ${setTransition};
   transition: ${setTransition};
-  font-size: 0.875rem;
+  font-size: ${({theme}) => theme.heading3.fontsize};
   border: 2px solid transparent;
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: ${setRadius};
+    border-color: ${({theme}) => theme.primary4};
 }
-.btn:hover {
-  color: ${({theme}) => theme.primary1};
-  background: ${({theme}) => theme.primary8};
+.btn:hover, .btn:focus {
+  color: ${({theme}) => theme.primary4};
+  background: ${({theme}) => theme.yellow};
 }
 .btn-danger {
   color: ${({theme}) => theme.mainWhite};
   background: ${({theme}) => theme.darkRed};
 }
-.btn-danger:hover {
+.btn-danger:hover, .btn:focus{
   color: ${({theme}) => theme.darkRed};
   background: ${({theme}) => theme.lightRed};
 }
@@ -133,11 +141,11 @@ p {
   margin: 0 auto;
   max-width: ${setMaxWidth};
 }
-@media screen and (min-width: 992px) {
+${media.desktop `
   .page-center {
     width: 95vw;
+  `
   }
-}
 .bg-grey {
   background: ${({theme}) => theme.grey10};
 }
@@ -234,9 +242,5 @@ overflow:hidden;
   position: absolute;
   width: 1px;
 }
-
-${'' /* #gatsby-focus-wrapper {
-  height: 100vh;
-} */}
 
 `

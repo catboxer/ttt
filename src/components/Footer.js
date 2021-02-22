@@ -52,7 +52,7 @@ const Wrapper = styled.footer`
 } */
 h4 {
   margin-bottom: 0;
-  color: ${({theme}) => theme.mainWhite};
+  color: #fff;
   text-shadow: 2px 2px #000;
   font-weight: 700;
   text-transform: uppercase;

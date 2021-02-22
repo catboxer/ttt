@@ -1,14 +1,12 @@
 export const lightTheme = {
   primary1: "hsl(180, 91%, 17%)",
-  primary2: "hsl(180, 84%, 25%)",
   primary3: "hsl(180, 81%, 29%)",
   primary4: "hsl(180, 77%, 34%)",
-  primary5: "hsl(180, 62%, 45%)",
+  //primary5: "hsl(180, 62%, 45%)",
   /* lighter shades of primary color */
-  primary6: "hsl(180, 57%, 50%)",
+  //primary6: "hsl(180, 57%, 50%)",
   primary7: "hsl(180, 65%, 59%)",
   primary8: "hsl(180, 80%, 74%)",
-  primary9: "hsl(180, 94%, 87%)",
   primary10: "hsl(180, 87%, 94%)",
   /* darkest grey - used for headings */
   grey1: "hsl(209, 61%, 16%)",
@@ -32,20 +30,16 @@ export const lightTheme = {
   lightGreen: "hsl(162, 63%, 87%)",
   overlay: "rgba(255, 255, 255, 0.25)",
   twitter: "#0084b4",
-  test: {
-    test1:"yellow",
-    test2:"blue",
-  },
 };
 
 export const darkTheme = {
-  primary10: "#1a202c",
-  primary9: "#1a202c",
-  primary8: "#1a202c",
-  primary7: "#1a202c",
-  primary6: "hsl(180, 62%, 45%)",
+  primary10: "hsl(180, 91%, 17%)",
+  primary9: "hsl(180, 84%, 25%)",
+  primary8: "hsl(180, 81%, 29%)",
+  primary7: "hsl(180, 77%, 34%)",
+  //primary6: "hsl(180, 62%, 45%)",
   /* lighter shades of primary color */
-  primary5: "hsl(180, 57%, 50%)",
+  //primary5: "hsl(180, 57%, 50%)",
   primary4: "hsl(180, 65%, 59%)",
   primary3: "hsl(180, 80%, 74%)",
   primary2: "hsl(180, 94%, 87%)",
@@ -59,8 +53,8 @@ export const darkTheme = {
   grey4: "hsl(210, 31%, 80%)",
   grey3: "hsl(212, 33%, 89%)",
   grey1: "hsl(125, 33%, 96%)",
-  hotPink: "#e582b8",
-  lightPink:"#dc228d",
+  hotPink: "#dc228d",
+  lightPink:"#e582b8",
   yellow: "#fc0",
   blue:"#0084b4",
   orange:"#cc4d1e",
@@ -72,123 +66,111 @@ export const darkTheme = {
   lightGreen: "hsl(161, 62%, 41%)",
   overlay: "rgba(255, 255, 255, 0.25)",
   twitter: "#a3d9e9",
-    test: {
-    test1:"yellow",
-    test2:"blue",
-  },
-
 }
 export const regularTextTheme = {
+  //phone
 phcode: {
     fontsize:"1.2rem",
   },
+  phlineheight: "1.75",
+  phletterspacing: ".3rem",
   phparagraph: {
-    fontsize:"1rem",
-    lineheight: "1",
+    fontsize:".875rem",
     marginbottom: '1.25rem',
   },
   phheading1:{
-    fontsize:"2.25rem",
-    marginbottom: '2rem',
-    lineheight: "1",
+    fontsize:"3rem",
+    marginbottom: '.75rem',
   },
   phheading2:{
-    fontsize:"1.75rem",
-    marginbottom: '2rem',
-    lineheight: "1.25",
+    fontsize:"2rem",
+    marginbottom: '.75rem',
   },
   phheading3:{
     fontsize:"1.25rem",
-    marginbottom: '2rem',
-    lineheight: "1.25",
+    marginbottom: '.75rem',
   },
   phheading4:{
-    fontsize:"1rem",
-    marginbottom: '2rem',
-    lineheight: "1.25",
+    fontsize:".875rem",
+    marginbottom: '.75rem',
   },
+  // tablet
   code: {
     fontsize:"1.2rem",
   },
   paragraph: {
     fontsize:"1rem",
   },
+  lineheight:"1.50",
   heading1:{
-    fontsize:"3rem",
-    marginbottom: '2rem',
-    lineheight: "1",
+    fontsize:"3.5rem",
+    marginbottom: '3rem',
   },
   heading2:{
-    fontsize:"2.25rem",
-    marginbottom: '2rem',
-    lineheight: "1",
+    fontsize:"2.5rem",
+    marginbottom: '3rem',
   },
   heading3:{
     fontsize:"1.75rem",
-    marginbottom: '2rem',
-    lineheight: "1",
+    marginbottom: '3rem',
   },
   heading4:{
-    fontsize:"1.5rem",
+    fontsize:"1rem",
     marginbottom: '2rem',
-    lineheight: "1",
   },
-
+  a: "none",
+  ul: "none",
+  top: "60px",
+  display: "grid",
 }
 export const largeTextTheme = {
+  //phone
 phcode: {
-    fontsize:"2.4rem",
+  fontsize:"2rem",
   },
-  phparagraph: {
-    fontsize:"2rem",
-    lineheight: "1",
-    marginbottom: '1.25rem',
+phlineheight: "1.5",
+phletterspacing: ".2rem",
+phparagraph: {
+  fontsize:"1.75rem",
+  marginbottom: '2rem',
   },
-  phheading1:{
-    fontsize:"4.5rem",
-    marginbottom: '2rem',
-    lineheight: "1",
+phheadingmarginbottom: '.75rem',
+phheading1:{
+  fontsize:"3rem",
   },
-  phheading2:{
-    fontsize:"3.5rem",
-    marginbottom: '2rem',
-    lineheight: "1.25",
+phheading2:{
+  fontsize:"2rem",
   },
-  phheading3:{
-    fontsize:"2.5rem",
-    marginbottom: '2rem',
-    lineheight: "1.25",
+phheading3:{
+  fontsize:"1.75rem",
   },
-  phheading4:{
-    fontsize:"2rem",
-    marginbottom: '2rem',
-    lineheight: "1.25",
+phheading4:{
+  fontsize:"1.5rem",
   },
-  code: {
-    fontsize:"2.4rem",
+  //tablet
+code: {
+  fontsize:"2.5em",
   },
-  paragraph: {
-    fontsize:"2rem",
+paragraph: {
+  fontsize:"1.5rem",
   },
-  heading1:{
-    fontsize:"6rem",
-    marginbottom: '2rem',
-    lineheight: "1",
+lineheight:1.5,
+headingmarginbottom: '2rem',
+heading1:{
+  fontsize:"3.5rem",
   },
-  heading2:{
-    fontsize:"4.5rem",
-    marginbottom: '2rem',
-    lineheight: "1",
+heading2:{
+  fontsize:"2.5rem", 
   },
-  heading3:{
-    fontsize:"3.5rem",
-    marginbottom: '2rem',
-    lineheight: "1",
+heading3:{
+  fontsize:"2.25rem",
   },
-  heading4:{
-    fontsize:"3rem",
-    marginbottom: '2rem',
-    lineheight: "1",
+heading4:{
+  fontsize:"2rem",
   },
+a: "text-decoration: underline",
+ul: "list-style-type: disc",
+top: "120px",
+display: "flex",
 }
 

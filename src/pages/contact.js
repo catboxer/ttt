@@ -3,13 +3,13 @@ import Layout from '../components/layout'
 import Hero from '../components/Hero'
 import SEO from '../components/seo'
 import styled from 'styled-components'
-import {setFont, setRadius} from '../themes/styles'
+import {setFont, setRadius, media} from '../themes/styles'
 const NewsLetter = () => {
  
   return <Layout>
     <SEO title="Contact Page"/>
         <Hero showChair/>
-          <Section >
+          <Section id="main-content">
           <div className="newsletter-page">
             <div className="page-center">
             <h1>Contact Me</h1>
@@ -148,22 +148,19 @@ textarea {
 
 .submit-btn {
   grid-column: 2 / 3;
-  font-weight: 400;
-  font-size: 1rem;
   text-transform: capitalize;
-  border-color: ${({theme}) => theme.primary4};
   height: 3rem;
 }
 .submit-btn:hover {
   border-color: ${({theme}) => theme.primary8};;
 }
-@media screen and (min-width: 992px) {
+${media.desktop `
   /* .contact-form {
     flex-direction: row;
   } */
   .form-control {
     width: 30rem;
-  }
+  }`
   /* input[type='text'] {
     border-top-left-radius: ${setRadius};
     border-bottom-left-radius: ${setRadius};

@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const Success = () => {
   return <Layout>
   <Hero showChair/>
-    <Section className="success-page">
+    <Section id="main-content" className="success-page">
       <div className="page-center">
         <h2>your submission was received!</h2>
         <p> I'll be in touch shortly.</p>

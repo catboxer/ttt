@@ -30,28 +30,29 @@ const SocialLinks = ({ styleClass }) => {
     </ul>
   )
 }
-
 const LineItem = styled.li`
   .social-icon {
     font-size: 1.5rem;
     transition: ${setTransition};
     margin-left: 0.5rem;
   }
-  .social-icon:hover {
-    transform: translateY(-5px);
+  .github-icon {
+    color: ${({theme}) => theme.mainBlack};
   }
-.social-icon:focus  {
+  .twitter-icon {
+    color: ${({theme}) => theme.twitter};
+  }
+  .email-icon {
+    color: ${({theme}) => theme.orange}
+  }
+  .social-icon:hover{
     transform: translateY(-5px);
     color: ${({theme}) => theme.hotPink};
   }
-  
-.github-icon {
-  color: ${({theme}) => theme.mainBlack};
-}
-.twitter-icon {
-  color: ${({theme}) => theme.twitter};
-}
-.email-icon {
-  color: ${({theme}) => theme.orange}
-}`
+  /* cannot get focus to work on li
+  a:focus{
+    transform: translateY(-5px);
+    color: ${({theme}) => theme.hotPink};
+  } */
+`
 export default SocialLinks
