@@ -174,7 +174,7 @@ Use a meta viewport tag
 <meta name="vieport" content="width=device-width, initial-scale=1>"
 ```
 
-#### My Plan Of Action
+### My Plan Of Action
 
 To get started I am going to follow the steps below. This is a work in progress.
 
@@ -194,7 +194,7 @@ To get started I am going to follow the steps below. This is a work in progress.
 
 8. Make sure all my inline video has CC enabled.
 
-9. Check my images and [ and add captions when necessary.](https://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/C7).
+9. Check my images and [ and add captions when necessary](https://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/C7).
 
 10. Make sure to [tag my dynamic content ](https://accessibility.oit.ncsu.edu/it-accessibility-at-nc-state/developers/accessibility-handbook/aria-landmarks/) so it will get reread on paint.
 
@@ -202,7 +202,7 @@ To get started I am going to follow the steps below. This is a work in progress.
 
 I immediately found 22 errors on my index page and major issues with my small screen toggled menu and contact form.
 
-##### Menu
+#### Menu
 
 The menu on small screen was not available to the keyboard and this is taking me the longest time to get right.
 I had to use a [focus trap](https://www.npmjs.com/package/focus-trap-react) otherwise tabbing went behind the menu. Default behavior for these menus is that the menu does not close if the link and current page are a match. I assume because the page has no need to reload. This seemed annoying to me as I would expect the menu to close when I click a link.

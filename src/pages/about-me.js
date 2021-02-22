@@ -4,14 +4,14 @@ import Hero from '../components/Hero'
 import Banner from '../components/Banner'
 import styled from 'styled-components'
 import SEO from '../components/seo'
-import {setColor, setRadius, setLetterSpacing} from '../styles'
+import {setRadius, setLetterSpacing, media} from '../themes/styles'
 import {Link} from 'gatsby'
 const AboutMe = () => {
   return <Layout>
   <SEO title="About Me"/>
   <Hero showChair/>
   <Wrapper>
-<article>
+<article id="main-content">
         <h1>About</h1>
         <h2>Purpose</h2>
         <p>There is a treasure trove of shared knowledge on the Internet. I still feel a sense of sci fi wonder everytime I reach out to solve a problem and someone's words guide me to a solution.  The biggest high I get is when I've been struggling --could be for hours-- and I read somone's words that blows open a door into a whole new world. </p>
@@ -25,8 +25,14 @@ const AboutMe = () => {
         <h2>My Background</h2>
         <p>I've always thought of myself as the creative sort. I spent my time in arts, design and fashion. After I'd had a baby I decided I wanted to stay at home so I launched a successful ecommerce business printing cool, local art on baby clothes. That was over 17 years ago.</p>
         <p>About three years ago I decided to teach myself to sew. My goal was to be able to sew out a unique romper I had designed that didn't have any fasteners. Learning to sew is one of the most difficult challenges I've undertaken. I purchased several industrial machines, hired people to come in and show me their production sewing methods, watched over a hundred youTube videos, worked under a designer who was also an expert seamstress, sewed out over 2,000 facemasks, altered clothing and taught myself how to make patterns, grade and work in optitex. I've come away from this experience knowing with certitude that I don't want to make anything that exists in the physical rhealm.</p>
+<<<<<<< HEAD
         <p>My husband kept suggesting I learn more Javascript but my mindset wasn't there yet. Last year I received a small grant from Propser Portland to work on my website and although I was grateful for the funding I came to recognize an ennui towards my clothing business very much akin to Henri's. </p><iframe width="100%" height="315" src="https://www.youtube.com/embed/0M7ibPk37_U" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowFullScreen title="Sad Cat"> </iframe>
         <p>In January of 2020 I started <a href="https://www.udemy.com/share/1013gGAkEbcFZTTQ==/" target="_blank" rel="noopener noreferrer">Angela Yu's Bootcamp Web Development class </a> and haven't looked back. </p>
+=======
+        <p>My husband kept suggesting I learn Javascript but my mindset wasn't there yet. Last year I received a small grant from Propser Portland to work on my website and although I was grateful for the funding I came to recognize an ennui towards my clothing business very much akin to Henri's here in this video that I love watching whenever I'm feeling a little down. </p><iframe width="100%" height="315" src="https://www.youtube.com/embed/0M7ibPk37_U" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy" allowFullScreen title="Sad Cat"> </iframe>
+        <p>Towards the end of 2019 I started a class on Javascript that I never finished. In January of 2020 I started <a href="https://www.udemy.com/share/1013gGAkEbcFZTTQ==/" target="_blank" rel="noopener noreferrer">Angela Yu's Bootcamp Web Development class </a> and haven't looked back. Her teaching style was so in sync with my brain that I wonder if I would still be coding if I hadn't tried her class.</p>
+
+>>>>>>> theme
         <p>Be well,</p>
         <p>Rosalee Rester</p>
 </article>
@@ -45,8 +51,8 @@ const Wrapper = styled.section`
     margin: 2rem 0 4rem 0;
     text-align: center;
     span {
-      background: ${setColor.primary5};
-      color: ${setColor.mainWhite};
+      background: ${({theme}) => theme.primary4};
+      color: ${({theme}) => theme.mainWhite};
       border-radius: ${setRadius};
       padding: 0.25rem 0.5rem;
       text-transform: uppercase;
@@ -57,27 +63,28 @@ const Wrapper = styled.section`
       font-weight: 400;
     }
     p {
-      color: ${setColor.grey5};
+      color: ${({theme}) => theme.grey5};
     }
     .underline {
       width: 5rem;
       height: 1px;
-      background: ${setColor.grey9};
+      background: ${({theme}) => theme.grey9};
       margin: 0 auto;
       margin-bottom: 1rem;
     }
   }
-  @media (min-width: 992px) {
+  ${media.desktop `
     & {
       width: 92vw;
-    }
+    }`
   }
-  @media (min-width: 1170px) {
+  ${media.large `
     & {
       display: grid;
       grid-template-columns: 1fr 200px;
       column-gap: 4rem;
     }
+    `
   }
 `
 

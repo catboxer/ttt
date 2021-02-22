@@ -4,7 +4,7 @@ import { FaRegClock } from 'react-icons/fa'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import {setColor, setRadius, setLetterSpacing} from '../../styles'
+import {setRadius, setLetterSpacing} from '../../themes/styles'
 
 const Post = ({frontmatter, excerpt, wordCount:{words}}) => {
   const {title, slug, image, date, category}=frontmatter;
@@ -44,13 +44,13 @@ const Wrapper = styled.article`
   .category {
     display: inline-block;
     margin-bottom: 1rem;
-    background: ${setColor.grey10};
+    background: ${({theme}) => theme.grey10};
     padding: 0.25rem 0.5rem;
     text-transform: uppercase;
     font-weight: 700;
     border-radius: ${setRadius};
     letter-spacing: ${setLetterSpacing};
-    color: ${setColor.grey5};
+    color: ${({theme}) => theme.grey3};
   }
   h3 {
     font-weight: 400;
@@ -60,19 +60,18 @@ const Wrapper = styled.article`
   .underline {
     width: 5rem;
     height: 1px;
-    background: ${setColor.grey9};
+    background: ${({theme}) => theme.grey9};
     margin: 0 auto;
     margin-bottom: 1rem;
   }
-  p {
-    color: ${setColor.grey5};
+  /* p {
+    color: ${({theme}) => theme.grey3};
     line-height: 1.8;
-  }
+  } */
   .link {
     text-transform: uppercase;
     letter-spacing: ${setLetterSpacing};
     font-weight: 700;
-    color: ${setColor.primary5};
     padding-bottom: 0.1rem;
     display: flex;
     align-items: center;
@@ -81,24 +80,24 @@ const Wrapper = styled.article`
       font-size: 1.2rem;
     }
   }
-  .link:hover {
-    border-color: ${setColor.primary8};
-    color: ${setColor.primary8};
-  }
+  /* .link:hover {
+    border-color: ${({theme}) => theme.primary8};
+    color: ${({theme}) => theme.primary8};
+  } */
   footer {
     margin-top: 2rem;
     padding-top: 1rem;
-    border-top: 1px solid ${setColor.grey9};
+    border-top: 1px solid ${({theme}) => theme.grey4};
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: ${setColor.grey5};
+    color: ${({theme}) => theme.grey4};
 
     & .date {
       display: flex;
       align-items: center;
       & .icon {
-        color: ${setColor.primary5};
+        color: ${({theme}) => theme.primary4};
         margin-right: 0.5rem;
       }
     }
@@ -115,7 +114,7 @@ const Wrapper = styled.article`
   }
   @media (min-width: 992px) {
     & {
-      display: grid;
+      display: ${({theme}) => theme.display};
       grid-template-columns: 30rem 1fr;
       column-gap: 1.5rem;
       .info {

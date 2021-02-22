@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { AiOutlineLike } from "react-icons/ai"
-import {setColor} from '../../styles'
+
 const LikeButton = () => {
   const [value, setValue] = React.useState(0)
   return (
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
     border: transparent;
     margin-right: 1rem;
     cursor: pointer;
-    color: ${setColor.primary5};
+    color: ${({theme}) => theme.primary4};
   }
   p {
     margin-bottom: 0;
@@ -44,7 +44,7 @@ const Wrapper = styled.div`
   }
   span {
     font-size: 2rem;
-    color: ${setColor.primary5};
+    color: ${({theme}) => theme.primary4};
     font-weight: 700;
   }
 `

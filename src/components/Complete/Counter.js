@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {setRadius, setColor} from '../../styles'
+import {setRadius} from '../../themes/styles'
 const Counter = () => {
   const [count, setCount] = React.useState(0)
   return (
@@ -28,7 +28,7 @@ const Wrapper = styled.div`
   max-width: 500px;
   border-radius: ${setRadius};
   padding: 1rem 1.5rem;
-  background: ${setColor.grey10};
+  background: ${({theme}) => theme.grey10};
   text-align: center;
   #value {
     font-size: 6rem;
@@ -38,28 +38,28 @@ const Wrapper = styled.div`
     margin: 0.5rem;
   }
   .dec-btn {
-    background: ${setColor.darkRed};
-    color: ${setColor.mainWhite};
+    background: ${({theme}) => theme.darkRed};
+    color: ${({theme}) => theme.mainWhite};
   }
   .dec-btn:hover {
-    background: ${setColor.lightRed};
-    color: ${setColor.darkRed};
+    background: ${({theme}) => theme.lightRed};
+    color: ${({theme}) => theme.darkRed};
   }
   .inc-btn {
-    background: ${setColor.darkGreen};
-    color: ${setColor.mainWhite};
+    background: ${({theme}) => theme.darkGreen};
+    color: ${({theme}) => theme.mainWhite};
   }
   .inc-btn:hover {
-    background: ${setColor.lightGreen};
-    color: ${setColor.darkGreen};
+    background: ${({theme}) => theme.lightGreen};
+    color: ${({theme}) => theme.darkGreen};
   }
   .reset-btn {
-    background: ${setColor.mainBlack};
-    color: ${setColor.mainWhite};
+    background: ${({theme}) => theme.mainBlack};
+    color: ${({theme}) => theme.mainWhite};
   }
   .reset-btn:hover {
-    background: ${setColor.grey5};
-    color: ${setColor.mainWhite};
+    background: ${({theme}) => theme.grey5};
+    color: ${({theme}) => theme.mainWhite};
   }
 `
 

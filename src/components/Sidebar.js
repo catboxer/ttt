@@ -1,13 +1,14 @@
-import React, {useRef, useEffect} from 'react'
+import React, {useRef, useEffect, useContext} from 'react'
 import Links from '../constants/links'
+import {AppContext} from './context'
 // import Categories from '../components/Categories'
 import { IoMdClose } from 'react-icons/io'
 import styled from 'styled-components'
-import {setColor, setFont, setTransition} from '../styles'
+import {setFont, setTransition, media} from '../themes/styles'
 const FocusTrap = require('../../node_modules/focus-trap-react/dist/focus-trap-react');
 
-const Sidebar = ({isOpen, setIsOpen,toggle}) => {
-
+const Sidebar = () => {
+const {toggle,isOpen, setIsOpen, } = useContext(AppContext)
   const dropdownMenuRef= useRef(null)
   const keyHandler =(event)=>{
       if (event.keyCode === 27 && isOpen) {
@@ -70,7 +71,7 @@ const Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: ${setColor.orange};
+  background: ${({theme}) => theme.orange};
   transition: ${setTransition};
   display: grid;
   align-items: center;
@@ -85,34 +86,36 @@ const Wrapper = styled.div`
     border-radius:0; 
     visibility: visible;
 }
-
 .sidebar-container {
-  width: 55%;
+  width:13%;
 }
 .sidebar-links li {
   margin-bottom: 3rem;
 }
-.sidebar-links .page-link:hover {
-    color: ${setColor.primary5};
-    transform: translateY(-5px);
-}
-.sidebar-links .page-link:focus {
-    color: ${setColor.primary5};
-    transform: translateY(-5px);
+a {
+    text-decoration: none;
 }
 .sidebar-links .page-link {
   ${setFont.heading};
   font-size: 2rem;
   display: block;
-  color: ${setColor.mainWhite};
+  color: #fff;
   font-weight: 700;
+}
+.sidebar-links .page-link:hover {
+    color: ${({theme}) => theme.primary4};
+    transform: translateY(-5px);
+}
+.sidebar-links .page-link:focus {
+    color: ${({theme}) => theme.primary4};
+    transform: translateY(-5px);
 }
 .sidebar .categories {
   flex-direction: column;
   margin: 1rem 0;
 }
 .sidebar .category {
-  color: ${setColor.grey5};
+  color: ${({theme}) => theme.grey5};
   font-size: 1.5rem;
   font-weight: 700;
   text-transform: capitalize;
@@ -122,7 +125,7 @@ const Wrapper = styled.div`
 }
 .close-btn {
   position: absolute;
-  color: ${setColor.mainWhite};
+  color: #fff;
   top: 1rem;
   right: 1rem;
   background: transparent;
@@ -131,19 +134,19 @@ const Wrapper = styled.div`
   cursor: pointer;
 }
 .close-btn:hover {
-    color: ${setColor.primary5};
+    color: ${({theme}) => theme.primary4};
     transform: translateY(-5px);
 }
 .close-btn:focus {
-    color: ${setColor.primary5};
+    color: ${({theme}) => theme.primary4};
     transform: translateY(-5px);
 }
-@media screen and (min-width: 800px) {
+${media.tablet `
   .sidebar {
     transform: translateX(-100%);
   }
+  `
 }
-
 `
 
 export default Sidebar

@@ -3,13 +3,13 @@ import Layout from '../components/layout'
 import Hero from '../components/Hero'
 import SEO from '../components/seo'
 import styled from 'styled-components'
-import {setColor, setFont, setRadius} from '../styles'
+import {setFont, setRadius, media} from '../themes/styles'
 const NewsLetter = () => {
  
   return <Layout>
     <SEO title="Contact Page"/>
         <Hero showChair/>
-          <Section >
+          <Section id="main-content">
           <div className="newsletter-page">
             <div className="page-center">
             <h1>Contact Me</h1>
@@ -105,14 +105,14 @@ ${'' /* .newsletter-page {
 }
 .newsletter-page h1 {
   text-transform: initial;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  /* font-size: 2rem;
+  margin-bottom: 1rem; */
 }
 .newsletter-page h2 {
   text-transform: initial;
-  font-size: 1rem;
+  /* font-size: 1rem;
   margin-bottom: 1.25rem;
-  color: ${setColor.grey5};
+  color: ${({theme}) => theme.grey5}; */
 }
 .contact-form {
   margin: 0 auto;
@@ -129,40 +129,38 @@ input[type='text']:focus,
 input[type='email']:focus,
 select:focus,
 textarea:focus {
-  outline: 3px solid ${setColor.yellow};
+  outline: 3px solid ${({theme}) => theme.yellow};
 }
+
 input,
 select,
 textarea {
   padding: 0.5rem;
-  border: 0.5px solid ${setColor.grey9};
+  border: 0.5px solid ${({theme}) => theme.grey4};
   font-size: 1rem;
   margin: 0.25rem 0;
   border-radius: ${setRadius};
   width: 100%;
   ${setFont.main}
-  color: ${setColor.grey5};
+  color: ${({theme}) => theme.grey3};
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 
 .submit-btn {
   grid-column: 2 / 3;
-  font-weight: 400;
-  font-size: 1rem;
   text-transform: capitalize;
-  border-color: ${setColor.primary5};
   height: 3rem;
 }
 .submit-btn:hover {
-  border-color: ${setColor.primary8};;
+  border-color: ${({theme}) => theme.primary8};;
 }
-@media screen and (min-width: 992px) {
+${media.desktop `
   /* .contact-form {
     flex-direction: row;
   } */
   .form-control {
     width: 30rem;
-  }
+  }`
   /* input[type='text'] {
     border-top-left-radius: ${setRadius};
     border-bottom-left-radius: ${setRadius};

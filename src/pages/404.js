@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Hero from '../components/Hero'
 import SEO from '../components/seo'
 import styled from 'styled-components'
-import {setColor} from '../styles'
+
 const NotFoundPage = () => 
 <Layout>
 <SEO title="Error Page"/>
@@ -27,7 +27,7 @@ const Section = styled.section`
 }
 .error-page span {
   font-size: 10rem;
-  color: ${setColor.mainBlack}
+  color: ${({theme}) => theme.mainBlack}
 }
 .error-page h3 {
   margin-bottom: 2rem;

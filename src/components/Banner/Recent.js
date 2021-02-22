@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { Link } from 'gatsby'
 import Image from 'gatsby-image'
 import Title from './Title'
-import {setColor, setRadius} from '../../styles'
+import {setColor, setRadius} from '../../themes/styles'
 //...GatsbyImageSharpFluid
 
 const Recent = () => {
@@ -26,16 +26,16 @@ const Wrapper = styled.div`
     margin-bottom: 0.25rem;
     letter-spacing: 0;
     line-height: 1.2;
-    color: ${setColor.grey1};
+    color: ${({theme}) => theme.grey1};
   }
   p {
     font-size: 0.6rem;
     margin-bottom: 0;
-    color: ${setColor.grey5};
+    color: ${({theme}) => theme.grey5};
   }
   .post:hover {
     h5 {
-      color: ${setColor.primary5};
+      color: ${({theme}) => theme.primary4};
     }
   }
 `

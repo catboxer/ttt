@@ -2,10 +2,10 @@ import React from 'react'
 import Post from './Post'
 import Banner from '../Banner'
 import styled from 'styled-components'
-import {setColor, setMaxWidth} from '../../styles'
+import {setMaxWidth} from '../../themes/styles'
 const Posts = ({posts, title}) => {
   return <Wrapper>
-          <div className="posts">
+          <div className="posts" id="main-content">
             <h1 className="posts-title">
               {title}
             </h1>
@@ -33,13 +33,15 @@ const Wrapper = styled.section`
   margin: 0 auto;
   margin-bottom: 4rem;
 }
+
 .posts-title {
   font-weight: 700;
   text-transform: uppercase;
-  color: ${setColor.hotPink};
+  color: ${({theme}) => theme.hotPink};
   font-size: 1.25rem;
   margin-bottom: 2.5rem;
 }
+
 @media screen and (min-width: 992px) {
   .posts {
     width: 92vw;
@@ -47,7 +49,7 @@ const Wrapper = styled.section`
 }
 @media screen and (min-width: 1170px) {
   .posts-center {
-    display: grid;
+    display: ${({theme}) => theme.display};
     grid-template-columns: 1fr 250px;
     column-gap: 1rem;
   }

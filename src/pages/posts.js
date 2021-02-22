@@ -8,7 +8,7 @@ const PostsPage = ({ data }) => {
   const {allMdx:{nodes:posts}}=data;
 
   return <Layout>
-    <SEO title="Fight The Forgetting Curve Blog"/>
+    <SEO title="Learning Tips For Front End Web Development"/>
     <Hero showChair/>
     <Posts posts={posts} title="all posts"/>
   </Layout>
