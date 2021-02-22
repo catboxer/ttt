@@ -12,7 +12,7 @@ import { Link } from "gatsby"
 
 ## Skipping Ahead to Visual Accessbility Modes
 
-I wanted to add in a skip link at the top of each page. If, every time you go to a new page, you have to [tab through the banner ad and all the navigation](https://www.schoolhouse.com/) just to get to the main content you will appreciate the [skip link](https://webaim.org/techniques/skipnav/). I wanted mine to be visible. I also wanted people to be able to toggle a larger font and a dark mode so I added in an accessibility toolbar using icons at the top left with the skip link following the logo.
+I wanted to add in a skip link at the top of each page. If, every time you go to a new page, you'd have to [tab through the banner ad and all the navigation](https://www.schoolhouse.com/) just to get to the main content you'd appreciate the [skip link](https://webaim.org/techniques/skipnav/). I wanted mine to be visible. I also wanted people to be able to toggle a larger font and a dark mode so I added in an accessibility toolbar using icons at the top left with the skip link following the logo.
 
 ### Styled-Components ThemeProvider
 
@@ -69,7 +69,11 @@ const AppProvider = ({ children }) => {
 
 ### Styles
 
-I switched the css over to styled components, created a global-style for global elements and added helper functions to centralize styles. I began to really understand the difficulty in taking someone else's CSS and massage it into something that works for me when trying to add two modes for theme colors and two modes for font sizes.
+I switched the css over to styled components, created a global-style for global elements and added helper functions to centralize styles. I really began to understand the difficulty in taking someone else's CSS and massaging it into something that works for me when trying to add two modes for theme colors and two modes for font sizes.
+
+I'd equate it the difference between altering a dress to cutting a new one from a pattern. You must carefully take out the seams out without ripping or stretching the fabric and then rearrange it so that it doesn't look like an outfit for Frankenstein...
+
+to the difference in altering clothing and making an entirely new piece from a pattern. Making a new piece is so much cleaner and easier.
 
 I will go back and streamline my styles once I take a CSS refresher cause lord knows I need one. When I tested it with google page speed the desktop dropped 6 points from additional long main-thread tasks.
 
