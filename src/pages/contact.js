@@ -141,8 +141,9 @@ textarea {
   margin: 0.25rem 0;
   border-radius: ${setRadius};
   width: 100%;
+  box-sizing:border-box;
   ${setFont.main}
-  color: ${({theme}) => theme.grey3};
+  color: hsl(209, 34%, 30%);
   box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
 }
 
@@ -151,9 +152,9 @@ textarea {
   text-transform: capitalize;
   height: 3rem;
 }
-.submit-btn:hover {
+/* .submit-btn:hover {
   border-color: ${({theme}) => theme.primary8};;
-}
+} */
 ${media.desktop `
   /* .contact-form {
     flex-direction: row;

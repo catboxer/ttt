@@ -63,7 +63,7 @@ ul {
   list-style-type: ${({theme}) => theme.ul};
 }
 ::placeholder {
-  color: ${({theme}) => theme.grey3};
+  color: hsl(209, 34%, 30%);
   opacity: 1;
 }
 a {
@@ -105,8 +105,7 @@ h4 {
   padding: 0.375rem 0.75rem;
   letter-spacing: ${setLetterSpacing};
   display: inline-block;
-  ${setFont.heading}
-  font-weight: 400;
+  font-weight: 700;
   -webkit-transition: ${setTransition};
   transition: ${setTransition};
   font-size: ${({theme}) => theme.heading3.fontsize};
