@@ -81,13 +81,13 @@ const Wrapper = styled.nav`
   height: 100%;
 }
 .access-toggles {
-display:flex;
-border-top: none;
-position:absolute;
-top:${({theme}) => theme.top};
-left:0;
-z-index: 6;
-${setShadow.darkest}
+  display:flex;
+  border-top: none;
+  position:absolute;
+  top:80px;
+  left:0;
+  z-index: 6;
+  ${setShadow.darkest}
 }
 .access-btn{
   color: ${lightTheme.hotPink};
@@ -169,10 +169,9 @@ ${media.tablet `
     justify-content: space-between;
   }
   .access-toggles {
-flex-direction: column;
-width: 3.5rem;
-height: 12em;
-justify-content: space-around;
+    flex-direction: column;
+    width: 3.5rem;
+    justify-content: space-around;
 }
 `}
 `

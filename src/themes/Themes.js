@@ -120,7 +120,7 @@ phcode: {
   },
   a: "none",
   ul: "none",
-  top: "80px",
+
 }
 export const largeTextTheme = {
   //phone
@@ -169,6 +169,5 @@ heading4:{
   },
 a: "text-decoration: underline",
 ul: "list-style-type: disc",
-top: "120px",
 }
 
