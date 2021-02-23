@@ -96,6 +96,7 @@ const Wrapper = styled.nav`
   cursor: pointer;
   padding: .5em;
   align-self: center;
+  font-size: 1rem;
 }
 .access-btn:hover{
   color: #000;
