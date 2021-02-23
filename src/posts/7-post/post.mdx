@@ -1,0 +1,29 @@
+---
+title: Google Tag Manager
+slug: gatsby-tracking-users
+image: ./images/google-tag-manager-preview.jpg
+alt: google tag manager chart showing a preview session
+date: 2021-02-23
+author: Rosalee Rester
+category: Gatsby
+---
+
+import { Link } from "gatsby"
+
+## Google Analytics
+
+I went to add thethisthat property to my [Google Analytics ](https://analytics.google.com/) dashboard and everything seemed fine. I decided to install [Google Tag Manager](https://tagmanager.google.com/) and have it manage my Google tracking code.
+
+### Gatsby Plug-ins
+
+I used the [gatsby plugin for tagmanager](https://www.gatsbyjs.com/plugins/gatsby-plugin-google-tagmanager/?=tag%20manager). I am interested in the [delay on the tagmanager](https://www.gatsbyjs.com/plugins/gatsby-plugin-google-tagmanager-delayed/?=tag%20manager) to retain my page load speed but didn't understand the advice regarding addding a gatsby-route-change trigger as it seemed to already exist. I'm going to understand what is going on there better before I install it. I have so little in my Google Tag container right now it doesn't impact my site all that much anyway.
+
+### Issues
+
+To get everything working took me awhile. Mostly because [Google is phasing out the Universal Analytics for GA4](https://www.analyticsmania.com/post/downgrade-from-google-analytics-4-to-universal-analytics/) and now hides that feature when you create a property. I wished I'd come across this [guy's blog on Google Analytics](https://www.analyticsmania.com/blog/) earlier because it is SO helpful.
+
+I spent awhile looking for my tracking ID until I finally realized I had to delete the property and start from fresh. When creating the property if you click advanced [you will be given the option to use both](https://support.google.com/analytics/answer/9539598?hl=en).
+
+<Link to="/posts" className="btn center-btn">
+  all posts
+</Link>
