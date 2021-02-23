@@ -6,19 +6,18 @@ import {setFont, setRadius, setMaxWidth, setTransition, setLetterSpacing, setFix
 export const GlobalStyle = createGlobalStyle`
   ${reset}
 *,
-*:after,
-*:before {
+::after,
+::before {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-size: ${({theme}) => theme.phparagraph.fontsize};
   ${setFont.main}
   background: ${({theme}) => theme.mainWhite};
   color: ${({theme})=> theme.grey3};
-  transition: all .50s linear;
   height: 100vh;
-  margin: 0;
   }
 h1,
 h2,
