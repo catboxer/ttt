@@ -86,7 +86,7 @@ flex-direction: column;
 border-top: none;
 position:absolute;
 margin: 0 auto;
-width: 2.5rem;
+width: 3.5rem;
 top:${({theme}) => theme.top};
 left:0;
 z-index: 6;
@@ -98,9 +98,8 @@ ${setShadow.darkest}
   margin-top: .5em;
   background: transparent;
   border: transparent;
-  font-size: 1.5rem;
   cursor: pointer;
-  margin: 0 auto 12px;
+  margin: 0 auto 1.5em;
 }
 .access-btn:hover{
   color: #000;

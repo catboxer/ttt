@@ -2,7 +2,7 @@ import React from 'react'
 import Post from './Post'
 import Banner from '../Banner'
 import styled from 'styled-components'
-import {setMaxWidth} from '../../themes/styles'
+import {setMaxWidth, media} from '../../themes/styles'
 const Posts = ({posts, title}) => {
   return <Wrapper>
           <div className="posts" id="main-content">
@@ -42,17 +42,17 @@ const Wrapper = styled.section`
   margin-bottom: 2.5rem;
 }
 
-@media screen and (min-width: 992px) {
+${media.desktop`
   .posts {
     width: 92vw;
-  }
+  }`
 }
-@media screen and (min-width: 1170px) {
+${media.large`
   .posts-center {
     display: grid;
     grid-template-columns: 1fr 250px;
     column-gap: 1rem;
-  }
+  }`
 }
 `
 export default Posts

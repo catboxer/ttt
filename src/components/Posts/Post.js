@@ -4,7 +4,7 @@ import { FaRegClock } from 'react-icons/fa'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import {setRadius, setLetterSpacing} from '../../themes/styles'
+import {setRadius, setLetterSpacing, media} from '../../themes/styles'
 
 const Post = ({frontmatter, excerpt, wordCount:{words}}) => {
   const {title, slug, image, date, category}=frontmatter;
@@ -102,17 +102,17 @@ const Wrapper = styled.article`
       }
     }
   }
-  @media (min-width: 600px) {
+  ${media.phone`
     .img {
       height: 20rem;
-    }
+    }`
   }
-  @media (min-width: 800px) {
+  ${media.tablet`
     .img {
       height: 25rem;
-    }
+    }`
   }
-  @media (min-width: 992px) {
+  ${media.desktop`
     & {
       display: grid;
       grid-template-columns: 30rem 1fr;
@@ -129,6 +129,7 @@ const Wrapper = styled.article`
         margin-right: 0;
       }
     }
+    `
   }
 `
 
