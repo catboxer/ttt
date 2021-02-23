@@ -10,13 +10,10 @@ export const GlobalStyle = createGlobalStyle`
 *:before {
   box-sizing: border-box;
 }
-html {
-  ${setFont.main}
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-size: ${({theme}) => theme.phparagraph.fontsize};
-}
+
 body {
+  font-size: ${({theme}) => theme.phparagraph.fontsize};
+  ${setFont.main}
   background: ${({theme}) => theme.mainWhite};
   color: ${({theme})=> theme.grey3};
   transition: all .50s linear;
