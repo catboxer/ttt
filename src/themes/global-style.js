@@ -10,7 +10,10 @@ export const GlobalStyle = createGlobalStyle`
 ::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+html{
+scroll-behavior: smooth;
+box-sizing: border-box;
 }
 body {
   font-size: ${({theme}) => theme.phparagraph.fontsize};
