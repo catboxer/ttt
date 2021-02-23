@@ -6,9 +6,9 @@ import Links from '../constants/links'
 import SocialLinks from '../constants/socialLinks'
 import styled from 'styled-components'
 import {setFont, setLetterSpacing, setMaxWidth, setRadius, setTransition, setShadow, media} from '../themes/styles'
-import { ImEyePlus } from 'react-icons/im'
-import { FaMoon} from "react-icons/fa";
-import {GiJumpAcross} from "react-icons/gi"
+import { GiBoltEye } from 'react-icons/gi'
+import { GiMoon} from 'react-icons/gi';
+import {GiJumpAcross} from 'react-icons/gi'
 import {lightTheme} from './../themes/Themes'
 //import Categories from './Categories'
 
@@ -28,19 +28,19 @@ const Navbar = () => {
       className="access-btn" 
       aria-label={`skip navigation`}
       >
-          <GiJumpAcross size={28}/>
+          <GiJumpAcross size={30}/>
       </a>
       <button 
       className="access-btn" 
       aria-label={`toggle between light and dark themes`}
       onClick={themeToggler}>
-          <FaMoon size={24}/>
+          <GiMoon size={30}/>
       </button>
       <button 
       className="access-btn" 
       aria-label={`toggle between small and large text`}
       onClick={fontSizeToggler}>
-          <ImEyePlus size={24}/>
+          <GiBoltEye size={30}/>
       </button>
       </div>
       <button 
@@ -82,11 +82,8 @@ const Wrapper = styled.nav`
 }
 .access-toggles {
 display:flex;
-flex-direction: column;
 border-top: none;
 position:absolute;
-margin: 0 auto;
-width: 3.5rem;
 top:${({theme}) => theme.top};
 left:0;
 z-index: 6;
@@ -94,12 +91,11 @@ ${setShadow.darkest}
 }
 .access-btn{
   color: ${lightTheme.hotPink};
-  margin-right: 1em;
-  margin-top: .5em;
   background: transparent;
   border: transparent;
   cursor: pointer;
-  margin: 0 auto 1.5em;
+  padding: .5em;
+  align-self: center;
 }
 .access-btn:hover{
   color: #000;
@@ -172,6 +168,12 @@ ${media.tablet `
     display: flex;
     justify-content: space-between;
   }
+  .access-toggles {
+flex-direction: column;
+width: 3.5rem;
+height: 12em;
+justify-content: space-around;
+}
 `}
 `
 
