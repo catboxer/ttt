@@ -18,7 +18,7 @@ body {
   background: ${({theme}) => theme.mainWhite};
   color: ${({theme})=> theme.grey3};
   height: 100vh;
-  overflow-x: hidden;
+  width: 100vw;
   }
 h1,
 h2,
