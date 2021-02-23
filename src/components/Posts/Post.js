@@ -44,13 +44,13 @@ const Wrapper = styled.article`
   .category {
     display: inline-block;
     margin-bottom: 1rem;
-    background: ${({theme}) => theme.grey10};
+    background: hsl(125, 33%, 96%);
     padding: 0.25rem 0.5rem;
     text-transform: uppercase;
     font-weight: 700;
     border-radius: ${setRadius};
     letter-spacing: ${setLetterSpacing};
-    color: ${({theme}) => theme.grey3};
+    color: hsl(209, 34%, 30%);
   }
   h3 {
     font-weight: 400;
