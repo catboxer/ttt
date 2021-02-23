@@ -25,22 +25,22 @@ const Navbar = () => {
         </Link>
 <div className="access-toggles">
   <a href="#main-content"
-      className="access-btn jump" 
+      className="access-btn" 
       aria-label={`skip navigation`}
       >
-          <GiJumpAcross />
+          <GiJumpAcross size={28}/>
       </a>
       <button 
-      className="access-btn moon" 
+      className="access-btn" 
       aria-label={`toggle between light and dark themes`}
       onClick={themeToggler}>
-          <FaMoon />
+          <FaMoon size={24}/>
       </button>
       <button 
-      className="access-btn eye" 
+      className="access-btn" 
       aria-label={`toggle between small and large text`}
       onClick={fontSizeToggler}>
-          <ImEyePlus />
+          <ImEyePlus size={24}/>
       </button>
       </div>
       <button 
@@ -81,7 +81,6 @@ const Wrapper = styled.nav`
   height: 100%;
 }
 .access-toggles {
-margin: 0 3em;
 display:flex;
 flex-direction: column;
 border-top: none;
@@ -101,7 +100,7 @@ ${setShadow.darkest}
   border: transparent;
   font-size: 1.5rem;
   cursor: pointer;
-  margin: 0 auto;
+  margin: 0 auto 12px;
 }
 .access-btn:hover{
   color: #000;

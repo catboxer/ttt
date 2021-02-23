@@ -114,7 +114,7 @@ const Wrapper = styled.article`
   }
   @media (min-width: 992px) {
     & {
-      display: ${({theme}) => theme.display};
+      display: grid;
       grid-template-columns: 30rem 1fr;
       column-gap: 1.5rem;
       .info {

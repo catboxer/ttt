@@ -49,7 +49,7 @@ const Wrapper = styled.section`
 }
 @media screen and (min-width: 1170px) {
   .posts-center {
-    display: ${({theme}) => theme.display};
+    display: grid;
     grid-template-columns: 1fr 250px;
     column-gap: 1rem;
   }
